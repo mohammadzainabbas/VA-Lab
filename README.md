@@ -28,14 +28,14 @@ __`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstru
 
 During this course, we will be introduced to techniques and tools for _analyzing_ and _visualizing_ data. It emphasizes how to combine computation and visualization to perform effective analysis. The course consists of two parts: a series of lectures on analytics and a series of lectures on visualization. Both parts will include hands-on tutorials during which you will work on analysis problems and start to build your own tools.
 
-<a id="main-topics" />
+<!-- <a id="main-topics" />
 
 #### 2.1. Main Topics
 
 - [x] Preliminaries, Typology of graphs, Graph analytics measures
 - [x] Basic algorithms: Random walk and Page Rank
 - [x] Label propagation, Community detection, Influence maximisation
-- [x] Graph analytics & Deep Learning
+- [x] Graph analytics & Deep Learning -->
 
 #
 
