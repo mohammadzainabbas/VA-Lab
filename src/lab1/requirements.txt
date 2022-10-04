@@ -1,4 +1,4 @@
-snap
-networkx[default]
 ipykernel
-mayavi
+requests
+beautifulsoup4
+selenium
