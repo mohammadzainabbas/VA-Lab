@@ -1,0 +1,12 @@
+tensorflow-macos
+tensorflow-metal
+torch
+torchvision
+matplotlib
+plotly
+snap
+networkx[default]
+dash
+jupyter-dash
+requests
+beautifulsoup4
