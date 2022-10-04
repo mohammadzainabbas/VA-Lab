@@ -19,13 +19,13 @@
 Before starting further, make sure that you have `conda` (Anaconda) installed (otherwise, create a new env via [virutalenv](#new-env-virtualenv)). We will create a new enviornment for the purpose of our labs:
 
 ```bash
-conda create -n mgma python=3 -y 
+conda create -n visual_analysis python=3 -y 
 ```
 
 and activate it
 
 ```bash
-conda activate mgma
+conda activate visual_analysis
 ```
 
 <a id="new-env-virtualenv" />
