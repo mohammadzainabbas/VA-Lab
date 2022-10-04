@@ -20,4 +20,5 @@ dependencies:
     - networkx[default]
     - dash
     - jupyter-dash
-    - bea
+    - requests
+    - 
