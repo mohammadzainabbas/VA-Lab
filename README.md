@@ -47,7 +47,7 @@ The purpose of this course is to study the main algorithms and their implementat
 
 ### 3. Labs
 
-The main aim of this repository is to keep track of the work we have done in __Visual Analysis (VA)__ labs. During this course, we will focus on some basic graph algorithms and see how we can utilise these algorithms to efficiently analyse our data. Since, there exist many similarities between graph theory and network science, you will see us using network science related packages as well.
+The main aim of this repository is to keep track of the work we have done in __Visual Analysis (VA)__ labs. During this course, we will be introduced to techniques and tools for _analyzing_ and _visualizing_ data. It emphasizes how to combine computation and visualization to perform effective analysis. The course consists of two parts: a series of lectures on analytics and a series of lectures on visualization. Both parts will include hands-on tutorials during which you will work on analysis problems and start to build your own tools.
 
 #
 
