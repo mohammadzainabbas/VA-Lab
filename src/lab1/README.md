@@ -33,7 +33,7 @@ In this lab, we will focus on some basic way to scrape the website data, and see
 
 ### 2. Data
 
-For the purpose of this lab, we will use graph datasets. Instead of creating our own graphs (you are more then welcome if you have your own graph datasets), we will use some already existing datasets.
+For the purpose of this lab, we will scrape a crypto-based  graph datasets. Instead of creating our own graphs (you are more then welcome if you have your own graph datasets), we will use some already existing datasets.
 
 #
 
