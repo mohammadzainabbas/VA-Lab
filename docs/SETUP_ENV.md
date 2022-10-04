@@ -39,14 +39,14 @@ You can create your virtual enviornment without conda as well. In order to do th
 pip install virtualenv
 ```
 
-Now, create your new enviornment called `mgma`
+Now, create your new enviornment called `visual_analysis`
 
 ```bash
-virtualenv -p python3 mgma
+virtualenv -p python3 visual_analysis
 ```
 
 and then activate it via
 
 ```bash
-source mgma/bin/activate
+source visual_analysis/bin/activate
 ```
