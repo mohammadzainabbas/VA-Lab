@@ -4,7 +4,7 @@
 
 - [Introduction](#introduction)
 - [About the course](#about-course)
-  * [Main Topics](#main-topics)
+  <!-- * [Main Topics](#main-topics) -->
 - [Labs](#labs)
   * [Lab 01 - Web Scrapping via Beautiful Soup](#lab-1)
 - [Setup](#setup)
