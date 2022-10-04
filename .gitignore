@@ -1,0 +1,10 @@
+# Ignore these folders
+.vscode
+
+# Ignore ipynb_checkpoints
+.ipynb_checkpoints
+
+# Ignore commit files
+
+commit.sh
+update_git.py
