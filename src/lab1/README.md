@@ -1,9 +1,9 @@
-## Lab 01 - Web Scraping via BeautifulSoup 👨🏻‍💻
+## Lab 01 - Web Scraping via Beautiful Soup 👨🏻‍💻
 
 ### Table of contents
 
 - [Introduction](#introduction)
-  * [Web Scraping via BeautifulSoup](#network-x)
+  * [Web Scraping via Beautiful Soup](#network-x)
 - [Dataset](#dataset)
   * [SNAP for Python](#snap-for-python)
   * [WormNet v3](#wormnet-v3)
@@ -23,9 +23,9 @@ In this lab, we will focus on some basic graph algorithms and see how we can uti
 
 <a id="network-x" />
 
-#### 1.1. Web Scraping via BeautifulSoup
+#### 1.1. Web Scraping via Beautiful Soup
 
-[Web Scraping via BeautifulSoup](https://networkx.org/) is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+[Web Scraping via Beautiful Soup](https://networkx.org/) is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
 
 #
 
