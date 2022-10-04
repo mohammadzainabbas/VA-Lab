@@ -27,7 +27,7 @@ In this lab, we will focus on some basic way to scrape the website data, and see
 
 #### 1.1. Web Scraping via Beautiful Soup
 
-[Web Scraping via Beautiful Soup](https://networkx.org/) is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
 
 #
 
