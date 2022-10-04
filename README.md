@@ -57,7 +57,7 @@ The main aim of this repository is to keep track of the work we have done in __M
 
 [Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
 
-Please checkout lab's details [here](https://github.com/mohammadzainabbas/MGMA-Lab/tree/main/src/lab1) 
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab1) 
 
 #
 
@@ -78,7 +78,7 @@ cd VA-Lab/src/<lab-of-your-choice>
 
 #### 4.1. Create new enviornment
 
-Before starting, you may have to create new enviornment for the lab. Kindly, checkout the [documentation](https://github.com/mohammadzainabbas/MGMA-Lab/blob/main/docs/SETUP_ENV.md) for creating an new environment.
+Before starting, you may have to create new enviornment for the lab. Kindly, checkout the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_ENV.md) for creating an new environment.
 
 #
 
@@ -92,6 +92,6 @@ pip install -r requirements.txt
 
 #### 4.2. Setup `pre-commit` hooks
 
-In order to setup `pre-commit` hooks, please refer to the [documentation](https://github.com/mohammadzainabbas/MGMA-Lab/blob/main/docs/SETUP_PRE-COMMIT_HOOKS.md).
+In order to setup `pre-commit` hooks, please refer to the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_PRE-COMMIT_HOOKS.md).
 
 #
