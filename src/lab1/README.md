@@ -44,15 +44,15 @@ For the purpose of this lab, we will use graph datasets. Instead of creating our
 If you want to follow along, make sure to clone and `cd` to this lab's directory:
 
 ```bash
-git clone https://github.com/mohammadzainabbas/MGMA-Lab.git
-cd MGMA-Lab/src/lab1
+git clone https://github.com/mohammadzainabbas/VA-Lab.git
+cd VA-Lab/src/lab1
 ```
 
 <a id="create-new-env" />
 
 #### 3.1. Create new enviornment
 
-Before starting, you may have to create new enviornment for the lab. Kindly, checkout the [documentation](https://github.com/mohammadzainabbas/MGMA-Lab/blob/main/docs/SETUP_ENV.md) for creating an new environment.
+Before starting, you may have to create new enviornment for the lab. Kindly, checkout the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_ENV.md) for creating an new environment.
 
 #
 
@@ -66,7 +66,7 @@ pip install -r requirements.txt
 
 #### 3.2. Setup `pre-commit` hooks
 
-In order to setup `pre-commit` hooks, please refer to the [documentation](https://github.com/mohammadzainabbas/MGMA-Lab/blob/main/docs/SETUP_PRE-COMMIT_HOOKS.md).
+In order to setup `pre-commit` hooks, please refer to the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_PRE-COMMIT_HOOKS.md).
 
 #
 
