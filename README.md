@@ -55,7 +55,7 @@ The main aim of this repository is to keep track of the work we have done in __M
 
 #### 3.1. Lab 01 - Web Scrapping via Beautiful Soup
 
-[Web Scrapping via Beautiful Soup](https://networkx.org/) is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/MGMA-Lab/tree/main/src/lab1) 
 
@@ -68,11 +68,11 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/MGMA-L
 If you want to follow along with the lab exercises, make sure to clone and `cd` to the relevant lab's directory:
 
 ```bash
-git clone https://github.com/mohammadzainabbas/MGMA-Lab.git
-cd MGMA-Lab/src/<lab-of-your-choice>
+git clone https://github.com/mohammadzainabbas/VA-Lab.git
+cd VA-Lab/src/<lab-of-your-choice>
 ```
 
-> For e.g: if you want to practice lab # 1, then you should do `cd MGMA-Lab/src/lab1`.
+> For e.g: if you want to practice lab # 1, then you should do `cd VA-Lab/src/lab1`.
 
 <a id="create-new-env" />
 
