@@ -20,10 +20,7 @@
 
 __`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed via several techniques. Although, most of the data pipelines are being automated, there arises a key need to keep human in the loop. 
 
-
- Today, many practical computing problems concern large graphs. Standard examples include the Web graph and various social networks. The scale of these graphs (_in some cases billions of vertices, trillions of edges_) poses challenges to their efficient processing.
-
-
+One of the fundamental ways to keep human-machine interaction more viable is to analyse data visually (to aid the human as much as possible). `Visual Analysis` introduces some techniques and tools for _analyzing_ and _visualizing_ data.
 
 #
 
