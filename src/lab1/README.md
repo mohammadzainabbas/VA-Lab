@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [Introduction](#introduction)
-  * [Web Scraping via Beautiful Soup](#network-x)
+  * [Web Scraping via Beautiful Soup](#beautiful-soup)
 - [Dataset](#dataset)
   * [SNAP for Python](#snap-for-python)
   * [WormNet v3](#wormnet-v3)
@@ -17,14 +17,13 @@
 
 ### 1. Introduction
 
-__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed easily via different techniques. 
+__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed easily via different techniques. In order to analyse your data, first you have to collect the data. 
 
+There are several ways one can collect the data. `Web Scrapping` is one of the most powerful way to collect the data (often real-time or more correct data).
 
-Today, many practical computing problems concern large graphs. Standard examples include the Web graph and various social networks. The scale of these graphs (_in some cases billions of vertices, trillions of edges_) poses challenges to their efficient processing.
+In this lab, we will focus on some basic way to scrape the website data, and see how we can utilise some basic methods to convert a parsed web page into a table for analysing it later.
 
-In this lab, we will focus on some basic graph algorithms and see how we can utilise these algorithms to efficiently analyse our data. Since, there exist many similarities between graph theory and network science, you will see us using network science related packages as well. 
-
-<a id="network-x" />
+<a id="beautiful-soup" />
 
 #### 1.1. Web Scraping via Beautiful Soup
 
