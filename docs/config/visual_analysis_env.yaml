@@ -21,4 +21,5 @@ dependencies:
     - dash
     - jupyter-dash
     - requests
+    - beautifulsoup4
     - 
