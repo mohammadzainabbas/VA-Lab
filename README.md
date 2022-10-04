@@ -18,7 +18,10 @@
 
 ### 1. Introduction
 
-__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed via several techniques. Today, many practical computing problems concern large graphs. Standard examples include the Web graph and various social networks. The scale of these graphs (_in some cases billions of vertices, trillions of edges_) poses challenges to their efficient processing.
+__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed via several techniques. Although, most of the data pipelines are being automated, there arises a key need to keep human in the loop. 
+
+
+ Today, many practical computing problems concern large graphs. Standard examples include the Web graph and various social networks. The scale of these graphs (_in some cases billions of vertices, trillions of edges_) poses challenges to their efficient processing.
 
 
 
