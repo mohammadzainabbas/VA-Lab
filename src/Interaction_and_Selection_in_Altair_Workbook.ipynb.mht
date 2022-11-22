@@ -1,0 +1,841 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://centralesupelec.edunao.com/pluginfile.php/257373/course/section/41565/Interaction_and_Selection_in_Altair_Workbook.ipynb
+Subject: 
+Date: Tue, 22 Nov 2022 09:49:31 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--D79I8fDcsYHvLDPCfxcEe5UTfCL7jW9LK0QFGySD31----"
+
+
+------MultipartBoundary--D79I8fDcsYHvLDPCfxcEe5UTfCL7jW9LK0QFGySD31----
+Content-Type: text/html
+Content-ID: <frame-B6F380F42DFCC6986D62460B2C41C2DB@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://centralesupelec.edunao.com/pluginfile.php/257373/course/section/41565/Interaction_and_Selection_in_Altair_Workbook.ipynb
+
+<html><head><meta http-equiv=3D"Content-Type" content=3D"text/html; charset=
+=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D"cid:css-9cbbfb=
+86-c225-4fad-bc82-ca49ba11ec90@mhtml.blink" /><link rel=3D"stylesheet" type=
+=3D"text/css" href=3D"cid:css-ccde365d-db53-48ab-bb4f-a88dd413683d@mhtml.bl=
+ink" /></head><body>{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Altair Tutorial: Interactivity and Selections\n",
+        "\n",
+        "Altair provides interactivity and selections functionalities to cr=
+eate interactive charts and dashboards."
+      ],
+      "metadata": {
+        "id": "F0Db49opEB4o"
+      }
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "id": "YLMV2r8kEALn"
+      },
+      "outputs": [],
+      "source": [
+        "import altair as alt\n",
+        "from altair import expr, datum\n",
+        "from vega_datasets import data\n",
+        "# Run this line to enable Altair in the Jupyter notebook\n",
+        "# Comment this line if you are using Google Colaboratory\n",
+        "#alt.renderers.enable('notebook')"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## Dataset: Seattle Weather Data\n",
+        "\n",
+        "In this tutorial, we will create visualizations to explore weather=
+ data for Seattle from NOAA. We have the daily records of weather condition=
+s from January 1st, 2012 to December 31st, 2015.\n",
+        "\n",
+        "The dataset consists of columns for the temperature (in Celsius), =
+precipitation (in millimeters), wind speed (in meters/second), and weather =
+type (sun, fog, drizzle, rain, or snow).\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "MjDfHa2dFapH"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "weather =3D data.seattle_weather()\n",
+        "weather.head()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 206
+        },
+        "id": "6DkE6e5ZFodS",
+        "outputId": "3a2ab92a-db95-44cc-9939-dbf8f7ba0a94"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "        date  precipitation  temp_max  temp_min  wind  weath=
+er\n",
+              "0 2012-01-01            0.0      12.8       5.0   4.7  drizz=
+le\n",
+              "1 2012-01-02           10.9      10.6       2.8   4.5     ra=
+in\n",
+              "2 2012-01-03            0.8      11.7       7.2   2.3     ra=
+in\n",
+              "3 2012-01-04           20.3      12.2       5.6   4.7     ra=
+in\n",
+              "4 2012-01-05            1.3       8.9       2.8   6.1     ra=
+in"
+            ],
+            "text/html": [
+              "\n",
+              "  <div id=3D"\&quot;df-9c3100bd-5055-4163-bdc3-adf1e904543c\=
+&quot;">\n",
+              "    <div class=3D"\&quot;colab-df-container\&quot;">\n",
+              "      <div>\n",
+              "\n",
+              "\n",
+              "  \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "  \n",
+              "  \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "    \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "      \n",
+              "    \n",
+              "  \n",
+              "<table border=3D"\&quot;1\&quot;" class=3D"\&quot;dataframe\=
+&quot;"><thead><tr style=3D"\&quot;text-align:" right;\"=3D""><th></th><th>=
+date</th><th>precipitation</th><th>temp_max</th><th>temp_min</th><th>wind</=
+th><th>weather</th></tr></thead><tbody><tr><th>0</th><td>2012-01-01</td><td=
+>0.0</td><td>12.8</td><td>5.0</td><td>4.7</td><td>drizzle</td></tr><tr><th>=
+1</th><td>2012-01-02</td><td>10.9</td><td>10.6</td><td>2.8</td><td>4.5</td>=
+<td>rain</td></tr><tr><th>2</th><td>2012-01-03</td><td>0.8</td><td>11.7</td=
+><td>7.2</td><td>2.3</td><td>rain</td></tr><tr><th>3</th><td>2012-01-04</td=
+><td>20.3</td><td>12.2</td><td>5.6</td><td>4.7</td><td>rain</td></tr><tr><t=
+h>4</th><td>2012-01-05</td><td>1.3</td><td>8.9</td><td>2.8</td><td>6.1</td>=
+<td>rain</td></tr></tbody></table>\n",
+              "</div>\n",
+              "      <button class=3D"\&quot;colab-df-convert\&quot;" "=3D"=
+" title=3D"\&quot;Convert" this=3D"" dataframe=3D"" to=3D"" an=3D"" interac=
+tive=3D"" table.\"\n",=3D"" style=3D"\&quot;display:none;\&quot;">\n",
+              "        \n",
+              "  <svg xmlns=3D"\&quot;http://www.w3.org/2000/svg\&quot;" he=
+ight=3D"\&quot;24px\&quot;viewBox=3D\&quot;0" 0=3D"" 24=3D"" 24\"\n",=3D"" =
+"=3D"" width=3D"\&quot;24px\&quot;">\n",
+              "    <path d=3D"\&quot;M0" 0h24v24h0v0z\"=3D"" fill=3D"\&quot=
+;none\&quot;/">\n",
+              "    <path d=3D"\&quot;M18.56" 5.44l.94=3D"" 2.06.94-2.06=3D"=
+" 2.06-.94-2.06-.94-.94-2.06-.94=3D"" 2.06-2.06.94zm-11=3D"" 1l8.5=3D"" 8.5=
+l.94-2.06=3D"" 2.06-.94-2.06-.94l8.5=3D"" 2.5l-.94=3D"" 2.06-2.06.94zm10=3D=
+"" 10l.94=3D"" 2.06-2.06.94z\"=3D""></path><path d=3D"\&quot;M17.41" 7.96l-=
+1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52=3D"" 0-1.04.2-1.43.59l10.3=3D"" 9.45l=
+-7.72=3D"" 7.72c-.78.78-.78=3D"" 2.05=3D"" 0=3D"" 2.83l4=3D"" 21.41c.39.39.=
+9.59=3D"" 1.41.59.51=3D"" 1.02-.2=3D"" 1.41-.59l7.78-7.78=3D"" 2.81-2.81c.8=
+-.78.8-2.07=3D"" 0-2.86zm5.41=3D"" 20l4=3D"" 18.59l7.72-7.72=3D"" 1.47=3D""=
+ 1.35l5.41=3D"" 20z\"=3D""></path>\n",
+              "  </path></svg>\n",
+              "      </button>\n",
+              "      \n",
+              "  \n",
+              "\n",
+              "      \n",
+              "    </div>\n",
+              "  </div>\n",
+              "  "
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 1. Basic Interactions: Panning, Zooming, Tooltips\n",
+        "\n",
+        "**Panning and Zooming:** You can use the ``interactive()`` shortcu=
+t to panning and zoom on the chart.\n",
+        "\n",
+        "**Tooltip:** Add ``tooltip`` in the encoding of the chart and spec=
+ify the variable you want to show when hovering over the visual element."
+      ],
+      "metadata": {
+        "id": "nxURo2W9EyGx"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "alt.Chart(weather).mark_point(opacity=3D0.5).encode(\n",
+        "    x=3D'temp_min:Q',\n",
+        "    y=3D'temp_max:Q',\n",
+        "    color=3D'weather:N',\n",
+        "    tooltip=3D'date:T'\n",
+        ")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "JjNY0UxnEuuO",
+        "outputId": "ff912e5c-5668-4a01-c02c-e492ccd435a0"
+      },
+      "execution_count": 3,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-0be53168ff3e42338b898298434eb40=
+4\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 3
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 2. Brushing and Selections\n",
+        "\n",
+        "There are three basic types of selections available:\n",
+        "\n",
+        "* Interval Selection: `alt.selection_interval()`\n",
+        "* Single Selection: `alt.selection_single()`\n",
+        "* Multi Selection: `alt.selection_multi()`\n",
+        "\n",
+        "### Brushing\n",
+        "\n",
+        "To add selection behavior to a chart, we create the selection obje=
+ct and use the `add_selection` method:"
+      ],
+      "metadata": {
+        "id": "1OwqaXUUIrLU"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Step 1: Create a brush interval selection\n",
+        "\n",
+        "\n",
+        "alt.Chart(weather).mark_point().encode(\n",
+        "    x=3D'temp_min:Q',\n",
+        "    y=3D'temp_max:Q',\n",
+        "    color=3D'weather:N', # Step 3: Add condition to highlight the =
+selection data\n",
+        "    tooltip=3D'date:T'\n",
+        ")\n",
+        "# Step 2: Bind the brush on the chart\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "lGICGWCZHdlN",
+        "outputId": "ab7ff6f1-1491-416a-e5d9-e52d36a1b30e"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-f8410d6331ee4e719ece32f8563088b=
+1\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The brush will select points on the plot and stored it in the `int=
+erval` object.\n",
+        "\n",
+        "Then, we can use the `condition()` function to change an element o=
+f the chart based on that input.:"
+      ],
+      "metadata": {
+        "id": "l1fIwyo6Knh6"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "uUmB-cqmLAde"
+      },
+      "execution_count": 4,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The `alt.selection_interval()` function takes a number of addition=
+al arguments.\n",
+        "\n",
+        "* `encodings` allows us to control whether the selection covers x,=
+ y, or both. For example, `alt.selection_interval(encodings=3D['x'])`.\n",
+        "* `empty` lets us control whether empty selections contain all val=
+ues, or none of the values. For example, `alt.selection_interval(empty=3D'n=
+one')`."
+      ],
+      "metadata": {
+        "id": "O6A8UFmLMcwm"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Single selection\n",
+        "\n",
+        "The `alt.selection_single()` function allows the user to click on =
+single chart objects to select them, one at a time."
+      ],
+      "metadata": {
+        "id": "9-2XLysIN9WT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Step 1: Create a single selection\n",
+        "\n",
+        "\n",
+        "alt.Chart(weather).mark_point().encode(\n",
+        "    x=3D'temp_min:Q',\n",
+        "    y=3D'temp_max:Q',\n",
+        "    color=3D'weather:N',  # Step 3: Add condition to highlight the=
+ selection data\n",
+        "    tooltip=3D'date:T'\n",
+        ")\n",
+        "# Step 2: Bind the selection on the chart\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "O-Ss40r5MccL",
+        "outputId": "6537ee68-8bb3-4cc4-b85c-b49eb267ad1a"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-01ade2c48be44736b90ad1f78ba4f19=
+1\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 5
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "The single selection allows other behavior as well. For example, w=
+e can set `nearest=3DTrue` and `on=3D'mouseover'` to update the highlight t=
+o the nearest point as we move the mouse."
+      ],
+      "metadata": {
+        "id": "acRzlFO7Och4"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "E6eJ-U8CAnpG"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "We can select the weather condition on the legend to bind the sele=
+ction on the scatterplot.\n",
+        "\n",
+        "`single =3D alt.selection_single(fields=3D['weather'], bind=3D'leg=
+end')`"
+      ],
+      "metadata": {
+        "id": "NXDJcEZgPdxe"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "oEzqjmGKPuje"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Multiple selection\n",
+        "\n",
+        "The `alt.selection_multi()` function is quite similar to the `sing=
+le` function, except it lets multiple points be selected at once, while hol=
+ding the shift key."
+      ],
+      "metadata": {
+        "id": "AKTdWZwaOz8s"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Step 1: Create a multiple selection\n",
+        "\n",
+        "\n",
+        "alt.Chart(weather).mark_point().encode(\n",
+        "    x=3D'temp_min:Q',\n",
+        "    y=3D'temp_max:Q',\n",
+        "    color=3D'weather:N',  # Step 3: Add condition to highlight the=
+ selection data\n",
+        "    tooltip=3D'date:T'\n",
+        ")\n",
+        "# Step 2: Bind the selection on the chart\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "i9ZemJyVOuIY",
+        "outputId": "6d8bd364-ed40-42f7-ca6e-4b4e2edd0f67"
+      },
+      "execution_count": 6,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-60f205ec682b49e6a36d4c1ea8e1b62=
+1\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 6
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "## 3. Interaction with Compound Charts\n",
+        "\n",
+        "We can create the compound chart by combinding two or more charts =
+together. The Altair API provide three functions to create [multi-panel and=
+ layered charts](https://altair-viz.github.io/user_guide/compound_charts.ht=
+ml).\n",
+        "\n",
+        "* Layering: `chart1 + chart2` OR `alt.layer(chart1, chart2)`\n",
+        "* Horizontal concatenation: `chart1 | chart2` OR `alt.hconcat(char=
+t1, chart2)`\n",
+        "* Vertical concatenation: `chart1 &amp; chart2` OR `alt.vconcat(ch=
+art1, chart2)`"
+      ],
+      "metadata": {
+        "id": "2n6s-lasRuch"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "alt.Chart(weather).mark_point().encode(\n",
+        "    x=3D'temp_min:Q',\n",
+        "    y=3D'temp_max:Q',\n",
+        "    color=3D'weather:N',\n",
+        "    tooltip=3D'date:T'\n",
+        ")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "lAnt1q41PEM8",
+        "outputId": "3b93aed1-f868-46f5-bce9-36e0cf81b42d"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-2cbdd2db981348429c57736fa311055=
+e\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Brushing and Linking\n",
+        "\n",
+        "We can use brushing technique to select the data on one chart to s=
+elect the same data on the other chart."
+      ],
+      "metadata": {
+        "id": "pCTpYSsTUjvy"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "nW7wEI8TS_hQ"
+      },
+      "execution_count": 7,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Binding Scales to Other Domains\n",
+        "\n",
+        "We want to select the interval from one chart to bind the scale to=
+ the other chart.\n",
+        "\n",
+        "**TODO**\n",
+        "\n",
+        "1. Create the brush and `add_selection` on the chart.\n",
+        "2. Use `transform_filter` on the other chart to select the chart b=
+ased on the selected interval."
+      ],
+      "metadata": {
+        "id": "SuJhM_gPbi9x"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "alt.Chart(weather).mark_rule().encode(\n",
+        "    x=3D'date:T',\n",
+        "    y=3D'temp_min:Q',\n",
+        "    y2=3D'temp_max:Q',\n",
+        "    color=3D'weather:N'\n",
+        ").properties(width=3D800)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 368
+        },
+        "id": "XeyLlUmEap4E",
+        "outputId": "e0e29695-697c-41c7-dc27-f9cb548eba19"
+      },
+      "execution_count": 8,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-09854ac5d8bc46a399137603ce5f9bc=
+7\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.Chart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 8
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Create interval selection on the x-axis\n",
+        "\n",
+        "\n",
+        "# Base chart\n",
+        "base =3D alt.Chart(weather).mark_rule().encode(\n",
+        "    x=3D'date:T',\n",
+        "    y=3D'temp_min:Q',\n",
+        "    y2=3D'temp_max:Q',\n",
+        "    color=3D'weather:N'\n",
+        ").properties(width=3D800)\n",
+        "\n",
+        "# Add binding scale to the top chart\n",
+        "\n",
+        "\n",
+        "# Add interval selection to the bottom chart\n",
+        "\n",
+        "\n",
+        "# Combine the top and the bottom charts\n"
+      ],
+      "metadata": {
+        "id": "bduzF81hdYj2"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Filtering by Selection\n",
+        "\n",
+        "We want to select the data based on weather condition and the time=
+ interval.\n",
+        "\n",
+        "**TODO**\n",
+        "1. Select data points in the scatterplot based on the selected wea=
+ther condition in the bar chart.\n",
+        "2. Select the time interval on the scatterplot to filter the data =
+to count in the bar chart."
+      ],
+      "metadata": {
+        "id": "Bjzc5kDWcWdD"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Define the color scale\n",
+        "scale =3D alt.Scale(domain=3D['sun', 'fog', 'drizzle', 'rain', 'sn=
+ow'],\n",
+        "                  range=3D['#e7ba52', '#a7a7a7', '#aec7e8', '#1f77=
+b4', '#9467bd'])\n",
+        "color =3D alt.Color('weather:N', scale=3Dscale)"
+      ],
+      "metadata": {
+        "id": "wl_jNKspgAa6"
+      },
+      "execution_count": 10,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "points =3D alt.Chart(weather).mark_point().encode(\n",
+        "    alt.X('monthdate(date):T', title=3D'Date'),\n",
+        "    alt.Y('temp_max:Q',\n",
+        "        title=3D'Maximum Daily Temperature (C)',\n",
+        "        scale=3Dalt.Scale(domain=3D[-5, 40])\n",
+        "    ),\n",
+        "    color=3Dcolor,\n",
+        "    size=3Dalt.Size('precipitation:Q', scale=3Dalt.Scale(range=3D[=
+5, 200]))\n",
+        ").properties(\n",
+        "    width=3D800,\n",
+        "    height=3D300\n",
+        ")\n",
+        "\n",
+        "bars =3D alt.Chart(weather).mark_bar().encode(\n",
+        "    x=3D'count()',\n",
+        "    y=3D'weather:N',\n",
+        "    color=3Dcolor\n",
+        ").properties(width=3D800)\n",
+        "\n",
+        "points &amp; bars"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 524
+        },
+        "id": "gNGiZ3Sfg0PZ",
+        "outputId": "65a09e47-4fcf-4b40-883a-21921d13b9f4"
+      },
+      "execution_count": 11,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/html": [
+              "\n",
+              "<div id=3D"\&quot;altair-viz-b2d400a4c87f40f386acb44fd4cad06=
+8\&quot;"></div>\n",
+              ""
+            ],
+            "text/plain": [
+              "alt.VConcatChart(...)"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 11
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "### Summary\n",
+        "\n",
+        "**Selection Types**\n",
+        "\n",
+        "* selection_interval()\n",
+        "\n",
+        "* selection_single()\n",
+        "\n",
+        "* selection_multi()\n",
+        "\n",
+        "**Bindings**\n",
+        "\n",
+        "* Bind scales: drag &amp; scroll to interact with plot\n",
+        "\n",
+        "* Bind scales on another chart\n",
+        "\n",
+        "* Conditional encodings (e.g. color, size)\n",
+        "\n",
+        "* Filter data\n",
+        "\n",
+        "**Acknowledgement** This tutorial is based on [Interactivity and S=
+elections tutorial](https://altair-viz.github.io/altair-tutorial/notebooks/=
+06-Selections.html) by Jake VanderPlas"
+      ],
+      "metadata": {
+        "id": "qYzHyOIRc6gs"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "jkaWDFKQpRIE"
+      },
+      "execution_count": 11,
+      "outputs": []
+    }
+  ]
+}</body></html>
+------MultipartBoundary--D79I8fDcsYHvLDPCfxcEe5UTfCL7jW9LK0QFGySD31----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-9cbbfb86-c225-4fad-bc82-ca49ba11ec90@mhtml.blink
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--D79I8fDcsYHvLDPCfxcEe5UTfCL7jW9LK0QFGySD31----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-ccde365d-db53-48ab-bb4f-a88dd413683d@mhtml.blink
+
+@charset "utf-8";
+=0A
+------MultipartBoundary--D79I8fDcsYHvLDPCfxcEe5UTfCL7jW9LK0QFGySD31------
