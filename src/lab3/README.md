@@ -1,4 +1,4 @@
-## Lab 02 - Data Visualisation with Altair 👨🏻‍💻
+## Lab 03 - Interaction in Visualization with Altair 👨🏻‍💻
 
 ### Table of contents
 
