@@ -15,7 +15,7 @@
 
 ### 1. Introduction
 
-__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed easily via different techniques. In order to analyse your data, first you have to collect the data. 
+__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed easily via different techniques. In order to analyse your data, first you have to collect the data. We looked at the data collection part in the last lab 
 
 There are several ways one can collect the data. `Web Scrapping` is one of the most powerful way to collect the data (often real-time or more correct data).
 
