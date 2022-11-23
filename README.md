@@ -62,7 +62,7 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 
 #### 3.2. Lab 02 - Data Visualisation with Altair
 
-[Web Scrapping via Beautiful Soup](https://altair-viz.github.io/) is a Python package for the scraping data from the internet.
+[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite.
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab2) 
 
