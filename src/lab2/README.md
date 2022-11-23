@@ -33,7 +33,7 @@ In this lab, we will use Vega-Altair package to see how we can visualise our dat
 
 ### 2. Data
 
-For the purpose of this lab, we will use built-in dataset `cars` from vega-altair to scrape a crypto-exchange i.e [`__CoinGecko__`](https://www.coingecko.com/). We will try to extract the table containing all the information about several different crypto-coins.
+For the purpose of this lab, we will use built-in dataset `cars` from `vega_datasets` to scrape a crypto-exchange i.e [`__CoinGecko__`](https://www.coingecko.com/). We will try to extract the table containing all the information about several different crypto-coins.
 
 #
 
