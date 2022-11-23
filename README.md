@@ -7,6 +7,8 @@
   <!-- * [Main Topics](#main-topics) -->
 - [Labs](#labs)
   * [Lab 01 - Web Scrapping via Beautiful Soup](#lab-1)
+  * [Lab 02 - Data Visualisation with Altair](#lab-2)
+  * [Lab 03 - Interaction in Visualization with Altair](#lab-3)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
   * [Setup `pre-commit` hooks](#setup-pre-commit)
@@ -56,6 +58,22 @@ The main aim of this repository is to keep track of the work we have done in __V
 [Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab1) 
+
+<a id="lab-2" />
+
+#### 3.2. Lab 02 - Data Visualisation with Altair
+
+[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite.
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab2) 
+
+<a id="lab-3" />
+
+#### 3.3. Lab 03 - Interaction in Visualization with Altair
+
+[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite. In this lab, we will see how to use interactions with visualisation with [Vega-Altair](https://altair-viz.github.io/).
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab3) 
 
 #
 
