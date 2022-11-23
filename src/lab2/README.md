@@ -41,7 +41,7 @@ from vega_datasets import data
 cars = data.cars()
 ```
 
-or you can use any other [`pd.Dataframe`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that you want.
+or you can use any other [`pandas.DataFrame`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that you want.
 
 #
 
@@ -53,7 +53,7 @@ If you want to follow along, make sure to clone and `cd` to this lab's directory
 
 ```bash
 git clone https://github.com/mohammadzainabbas/VA-Lab.git
-cd VA-Lab/src/lab1
+cd VA-Lab/src/lab2
 ```
 
 <a id="create-new-env" />
