@@ -62,7 +62,7 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 
 #### 3.2. Lab 02 - Data Visualisation with Altair
 
-[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
+[Web Scrapping via Beautiful Soup](https://altair-viz.github.io/) is a Python package for the scraping data from the internet.
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab2) 
 
