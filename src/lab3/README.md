@@ -21,6 +21,8 @@ Once, we have our data, its important to perform exploratory data analysis (EDA)
 
 In this lab, we will use Vega-Altair package to see how we can visualise our data and interact with it as well to gain better understanding of our data.
 
+Furthermore, we will also see intra-chart interactions and learn several concepts (like: `brush`, `transform`)
+
 <a id="vega-altair" />
 
 #### 1.1. Vega-Altair
