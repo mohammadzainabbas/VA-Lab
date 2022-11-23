@@ -58,6 +58,14 @@ The main aim of this repository is to keep track of the work we have done in __V
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab1) 
 
+<a id="lab-2" />
+
+#### 3.2. Lab 02 - Data Visualisation with Altair
+
+[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab2) 
+
 #
 
 <a id="setup" />
