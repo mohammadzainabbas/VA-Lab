@@ -7,6 +7,7 @@
   <!-- * [Main Topics](#main-topics) -->
 - [Labs](#labs)
   * [Lab 01 - Web Scrapping via Beautiful Soup](#lab-1)
+  * [Lab 02 - Data Visualisation with Altair](#lab-2)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
   * [Setup `pre-commit` hooks](#setup-pre-commit)
