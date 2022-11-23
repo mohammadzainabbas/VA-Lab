@@ -3,7 +3,7 @@
 ### Table of contents
 
 - [Introduction](#introduction)
-  * [Web Scraping via Beautiful Soup](#beautiful-soup)
+  * [Vega-Altair](#beautiful-soup)
 - [Data](#data)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
