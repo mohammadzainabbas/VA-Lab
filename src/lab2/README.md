@@ -41,6 +41,8 @@ from vega_datasets import data
 cars = data.cars()
 ```
 
+or you can use any other `pd.Dataframe` that you want.
+
 #
 
 <a id="setup" />
