@@ -36,7 +36,9 @@ In this lab, we will use Vega-Altair package to see how we can visualise our dat
 For the purpose of this lab, we will use one of the built-in datasets i.e: `cars` from `vega_datasets` package. 
 
 ```python
-from 
+# Load car data from example datasets
+from vega_datasets import data
+cars = data.cars()
 ```
 
 #
