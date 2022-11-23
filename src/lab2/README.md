@@ -41,7 +41,7 @@ from vega_datasets import data
 cars = data.cars()
 ```
 
-or you can use any other `pd.Dataframe` that you want.
+or you can use any other [`pd.Dataframe`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) that you want.
 
 #
 
