@@ -25,7 +25,7 @@ In this lab, we will use Vega-Altair package to see how we can visualise our dat
 
 #### 1.1. Vega-Altair
 
-[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
+[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite.
 
 #
 
