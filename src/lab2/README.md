@@ -1,4 +1,4 @@
-## Lab 01 - Web Scraping via Beautiful Soup 👨🏻‍💻
+## Lab 02 - Data Visualisation with Altair 👨🏻‍💻
 
 ### Table of contents
 
