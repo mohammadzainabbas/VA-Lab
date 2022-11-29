@@ -11,8 +11,8 @@ d3.csv(`/src/lab4/data/data.csv`).then(data => {
     Ref: https://observablehq.com/@d3/d3-extent?collection=@d3/d3-array */
 
   // Get the minimum and maximum of the percent pay gap
-  const minPayGap = d3.min(data, d => d.pay_gap);
-  const maxPayGap = d3.max(data, d => d.pay_gap);
+  const minPayGap = d3.min(data, d => +d.pay_gap);
+  const maxPayGap = d3.max(data, d => +d.pay_gap);
 
   console.log(`Min pay gap: ${minPayGap}`);
   console.log(`Max pay gap: ${maxPayGap}`);
