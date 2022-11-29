@@ -65,11 +65,11 @@ const createBarChart = (data) => {
   // const margin = {top: 20, right: 20, bottom: 30, left: 40};
   const width = 900, height = 400;
   /* Create the SVG container */
-  d3
+  const svg = d3
   .select("#bar")
   .append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", width)
+  .attr("height", height)
   .viewBox([0, 0, width, height])
   .append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
