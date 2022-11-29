@@ -23,7 +23,8 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   // Filter the data from the year 2020
   const data2020 = data.filter(d => d.year === 2020);
   console.log(`Data from 2020: ${data2020}`);
-  console.group("Data from 2020");
+  console.groupCollapsed("Data from 2020");
+  // console.group("Data from 2020");
   console.table(data2020)
   console.groupEnd()
   // Sort the country by the percentage in the descending order
