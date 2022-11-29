@@ -1,9 +1,9 @@
-## Lab 01 - Web Scraping via Beautiful Soup 👨🏻‍💻
+## Lab 04 - Basic charts with d3.js 👨🏻‍💻
 
 ### Table of contents
 
 - [Introduction](#introduction)
-  * [Web Scraping via Beautiful Soup](#beautiful-soup)
+- [Web Scraping via Beautiful Soup](#beautiful-soup)
 - [Data](#data)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
