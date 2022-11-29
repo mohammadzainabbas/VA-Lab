@@ -23,7 +23,7 @@ In this lab, we will focus on learning how to generate some basic charts in `D3.
 
 ### 2. Data
 
-For the purpose of this lab, we will scrape a crypto-exchange i.e [`__CoinGecko__`](https://www.coingecko.com/). We will try to extract the table containing all the information about several different crypto-coins.
+For the purpose of this lab, we will use 
 
 #
 
