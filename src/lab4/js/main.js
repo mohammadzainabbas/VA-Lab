@@ -47,7 +47,7 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
 
   // Move the color scale here to share with both charts
   const colorScale = d3.scaleOrdinal()
-    .domain(data2020.map(d => d.country))
+	.domain(data2020.map(d => d.country))
     .range(d3.schemeTableau10);
   console.log(`Color scale: ${colorScale}`);
 
@@ -66,20 +66,20 @@ const createBarChart = (data) => {
   const margin = {top: 20, right: 20, bottom: 30, left: 40};
   /* Create the SVG container */
   const svg = d3
-  .select("#bar")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .attr("viewBox", [0, 0, width, height]);
+	.select("#bar")
+	.append("svg")
+	.attr("width", width)
+	.attr("height", height)
+	.attr("viewBox", [0, 0, width, height]);
 
   /* Define x-axis, y-axis, and color scales
     Ref: https://observablehq.com/@d3/introduction-to-d3s-scales */
   
   const xScale = d3
-  .scaleBand()
-  .domain(data.map(d => d.country))
-  .range([margin.left, width - margin.right])
-  .paddingInner(0.2);
+	.scaleBand()
+	.domain(data.map(d => d.country))
+	.range([margin.left, width - margin.right])
+	.paddingInner(0.2);
 
   console.groupCollapsed("xScale");
   console.log(xScale);
@@ -88,13 +88,13 @@ const createBarChart = (data) => {
   console.groupEnd();
 
   const yScale = d3
-  .scaleLinear()
-  .domain([0, d3.max(data, d => d.value)])
-  .range([height - margin.bottom, margin.top])
+	.scaleLinear()
+	.domain([0, d3.max(data, d => d.value)])
+	.range([height - margin.bottom, margin.top])
 
   const colorScale = d3.scaleOrdinal()
-  .domain(data.map(d => d.country))
-  .range(d3.schemeTableau10);
+	.domain(data.map(d => d.country))
+	.range(d3.schemeTableau10);
 
   /* Create the x and y axes and append them to the chart
     Ref: https://observablehq.com/@d3/axes */
