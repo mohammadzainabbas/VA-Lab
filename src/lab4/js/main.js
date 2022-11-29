@@ -38,8 +38,10 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   // Get the mean and median of gender gap percentage
   const mean = d3.mean(data2020, d => d.value);
   const median = d3.median(data2020, d => d.value);
+  console.groupCollapsed("Mean and Median");
   console.log(`Mean: ${mean}`);
   console.log(`Median: ${median}`);
+  console.groupEnd()
 
   // Move the color scale here to share with both charts
   const colorScale = d3.scaleOrdinal()
