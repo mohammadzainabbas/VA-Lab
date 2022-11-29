@@ -85,6 +85,24 @@ const createBarChart = (data) => {
   .domain([0, d3.max(data, d => d.value)])
   .range([height - margin.bottom, margin.top])
 
+  const colorScale = d3.scaleOrdinal()
+  .domain(data.map(d => d.country))
+  .range(d3.schemeTableau10);
+
+  /* Create the x and y axes and append them to the chart
+    Ref: https://observablehq.com/@d3/axes */
+  
+  const xAxis = d3.axisBottom(xScale);
+  const yAxis = d3.axisLeft(yScale);
+
+  svg.append("g")
+  .attr("transform", `translate(0, ${height - margin.bottom})`)
+  .call(xAxis)
+  .selectAll("text")
+  .attr("transform", "rotate(-45)")
+  .attr("text-anchor", "end")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
   
 
   /* Working with Color: https://observablehq.com/@d3/working-with-color 
