@@ -70,7 +70,7 @@ const createBarChart = (data) => {
   .append("svg")
   .attr("width", width)
   .attr("height", height)
-  .viewBox([0, 0, width, height])
+  .attr("viewBox", [0, 0, width, height]);
   // .append("g")
   // .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
