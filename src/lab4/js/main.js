@@ -32,6 +32,12 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   console.log(`Median: ${median}`);
 
   // Move the color scale here to share with both charts
+  const colorScale = d3.scaleOrdinal()
+    .domain(data2020.map(d => d.country))
+    .range(d3.schemeTableau10);
+  
+  // Create the bar chart
+  createBarChart(data2020);
   
 
   // Plot the bar chart
