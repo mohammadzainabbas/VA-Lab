@@ -62,6 +62,9 @@ const createBarChart = (data) => {
   /* Set the dimensions and margins of the graph
     Ref: https://observablehq.com/@d3/margin-convention */
   
+  const margin = {top: 20, right: 20, bottom: 30, left: 40};
+  const width = 960 - margin.left - margin.right;
+  const height = 500 - margin.top - margin.bottom;
   /* Create the SVG container */
   d3
   .select("#bar")
@@ -70,7 +73,7 @@ const createBarChart = (data) => {
   .attr("height", height + margin.top + margin.bottom)
   .append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
-  
+
 
   /* Define x-axis, y-axis, and color scales
     Ref: https://observablehq.com/@d3/introduction-to-d3s-scales */
