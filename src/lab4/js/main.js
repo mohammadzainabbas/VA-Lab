@@ -145,6 +145,11 @@ const createBarChart = (data) => {
   .selectAll("rect")
   .data(data)
   .join("rect")
+  .attr("x", d => xScale(d.country))
+  .attr("y", d => yScale(d.value))
+  .attr("width", xScale.bandwidth())
+  .attr("height", d => yScale(0) - yScale(d.value))
+  .attr("fill", d => colorScale(d.country))
 
   /* Add the tooltip when hover on the bar */
   
