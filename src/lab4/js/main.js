@@ -16,8 +16,9 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   // Get the minimum and maximum of the percent pay gap
   const minPayGap = d3.min(data, d => d.value);
   const maxPayGap = d3.max(data, d => d.value);
+  // const [min, max] = d3.extend(data, d => d.value);
 
-  console.groupCollapsed("Data from 2020");
+  console.groupCollapsed("Min and Max");
   console.log(`Min pay gap: ${minPayGap}`);
   console.log(`Max pay gap: ${maxPayGap}`);
   console.groupEnd()
