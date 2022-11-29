@@ -5,7 +5,7 @@
   Ref: https://www.d3indepth.com/requests/ */
 d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   // Print out the data on the console
-  console.table(data);
+  console.log(data);
 
   /* Data Manipulation in D3 
     Ref: https://observablehq.com/@d3/d3-extent?collection=@d3/d3-array */
