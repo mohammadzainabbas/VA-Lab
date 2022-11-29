@@ -71,13 +71,14 @@ const createBarChart = (data) => {
   .attr("width", width)
   .attr("height", height)
   .attr("viewBox", [0, 0, width, height]);
-  // .append("g")
-  // .attr("transform", `translate(${margin.left}, ${margin.top})`);
-
 
   /* Define x-axis, y-axis, and color scales
     Ref: https://observablehq.com/@d3/introduction-to-d3s-scales */
   
+  const xScale = d3
+  .scaleBand()
+  .domain(data.map(d => d.country))
+  .range([margin.left, width - margin.right])
 
   /* Working with Color: https://observablehq.com/@d3/working-with-color 
     d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
