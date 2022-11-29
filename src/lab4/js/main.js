@@ -71,8 +71,8 @@ const createBarChart = (data) => {
   .attr("width", width)
   .attr("height", height)
   .viewBox([0, 0, width, height])
-  .append("g")
-  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+  // .append("g")
+  // .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 
   /* Define x-axis, y-axis, and color scales
