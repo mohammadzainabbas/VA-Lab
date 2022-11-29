@@ -3,8 +3,10 @@
 
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
-d3.csv(`/src/lab4/data/data.csv`).then(data => {
+d3.csv(`src/lab4/data/data.csv`).then(data => {
   // Print out the data on the console
+
+  console.table(data);
   
 
   /* Data Manipulation in D3 
