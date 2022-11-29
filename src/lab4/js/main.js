@@ -8,7 +8,7 @@ console.log(parseTime("2010"));
   Ref: https://www.d3indepth.com/requests/ */
 d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   // Print out the data on the console
-  console.groupCollapsed("Data from csv");
+  console.groupCollapsed("Data from csv file");
   console.table(data)
   console.groupEnd()
 
