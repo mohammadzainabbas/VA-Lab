@@ -49,7 +49,6 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   const colorScale = d3.scaleOrdinal()
     .domain(data2020.map(d => d.country))
     .range(d3.schemeTableau10);
-    debugger
   console.log(`Color scale: ${colorScale}`);
 
   // Plot the bar chart
