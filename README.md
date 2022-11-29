@@ -74,6 +74,11 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 [Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite. In this lab, we will see how to use interactions with visualisation with [Vega-Altair](https://altair-viz.github.io/).
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab3) 
+#### 3.4. Lab 04 - Basic 
+
+[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite. In this lab, we will see how to use interactions with visualisation with [Vega-Altair](https://altair-viz.github.io/).
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab3) 
 
 #
 
