@@ -79,6 +79,7 @@ const createBarChart = (data) => {
   .scaleBand()
   .domain(data.map(d => d.country))
   .range([margin.left, width - margin.right])
+  .paddingInner(0.2;
 
   const yScale = d3
   .scaleLinear()
@@ -124,7 +125,7 @@ const createBarChart = (data) => {
   .attr("fill", d => colorScale(d.country))
   .attr("stroke", "black")
   .attr("stroke-width", 1);
-  
+
 
   /* Working with Color: https://observablehq.com/@d3/working-with-color 
     d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
