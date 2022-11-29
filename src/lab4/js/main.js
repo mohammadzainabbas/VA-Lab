@@ -36,9 +36,7 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
     .domain(data2020.map(d => d.country))
     .range(d3.schemeTableau10);
   
-  // Create the bar chart
-  createBarChart(data2020);
-  
+  console.log(`Color scale: ${colorScale}`);
 
   // Plot the bar chart
   createBarChart(data);
