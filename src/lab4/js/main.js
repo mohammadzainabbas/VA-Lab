@@ -14,6 +14,9 @@ d3.csv(`/src/lab4/data/data.csv`).then(data => {
   const minPayGap = d3.min(data, d => d.pay_gap);
   const maxPayGap = d3.max(data, d => d.pay_gap);
 
+  console.log(`Min pay gap: ${minPayGap}`);
+  console.log(`Max pay gap: ${maxPayGap}`);
+
 
   // Filter the data from the year 2020
   
