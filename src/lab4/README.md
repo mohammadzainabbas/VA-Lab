@@ -3,7 +3,6 @@
 ### Table of contents
 
 - [Introduction](#introduction)
-- [Web Scraping via Beautiful Soup](#beautiful-soup)
 - [Data](#data)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
@@ -21,13 +20,6 @@ There are several ways one can collect the data. `Web Scrapping` is one of the m
 
 In this lab, we will focus on some basic way to scrape the website data, and see how we can utilise some basic methods to convert a parsed web page into a table for analysing it later.
 
-<a id="beautiful-soup" />
-
-#### 1.1. Web Scraping via Beautiful Soup
-
-[Web Scrapping via Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) is a Python package for the scraping data from the internet.
-
-#
 
 <a id="data" />
 
