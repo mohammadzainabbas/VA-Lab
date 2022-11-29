@@ -22,7 +22,7 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   console.log(`Min pay gap: ${minPayGap}`);
   console.log(`Max pay gap: ${maxPayGap}`);
   console.groupEnd()
-
+  
   // Filter the data from the year 2020
   const data2020 = data.filter(d => d.year === 2020);
   console.groupCollapsed("Data from 2020");
@@ -31,7 +31,9 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   
   // Sort the country by the percentage in the descending order
   const sortedData = data2020.sort((a, b) => d3.descending(a.value, b.value));
-  console.log(`Sorted data: ${sortedData}`);
+  console.groupCollapsed("Sorted Data");
+  console.table(sortedData)
+  console.groupEnd()
 
   // Get the mean and median of gender gap percentage
   const mean = d3.mean(data2020, d => d.value);
