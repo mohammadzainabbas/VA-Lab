@@ -63,8 +63,7 @@ const createBarChart = (data) => {
     Ref: https://observablehq.com/@d3/margin-convention */
   
   /* Create the SVG container */
-  console.log(typeof(d3.select("#bar"))
-  d3.select("#bar")
+  d3.select("#bar").append("svg")
 
   /* Define x-axis, y-axis, and color scales
     Ref: https://observablehq.com/@d3/introduction-to-d3s-scales */
