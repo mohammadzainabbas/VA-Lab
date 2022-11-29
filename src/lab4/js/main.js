@@ -108,21 +108,21 @@ const createBarChart = (data) => {
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale);
 
-  svg.append("g")
-  .attr("transform", `translate(0, ${height - margin.bottom})`)
-  .call(xAxis)
-  .selectAll("text")
-  .attr("transform", "rotate(-45)")
-  .attr("text-anchor", "end")
-  .attr("font-size", "12px")
-  .attr("fill", "black");
+  // svg.append("g")
+  // .attr("transform", `translate(0, ${height - margin.bottom})`)
+  // .call(xAxis)
+  // .selectAll("text")
+  // .attr("transform", "rotate(-45)")
+  // .attr("text-anchor", "end")
+  // .attr("font-size", "12px")
+  // .attr("fill", "black");
 
-  svg.append("g")
-  .attr("transform", `translate(${margin.left}, 0)`)
-  .call(yAxis)
-  .selectAll("text")
-  .attr("font-size", "12px")
-  .attr("fill", "black");
+  // svg.append("g")
+  // .attr("transform", `translate(${margin.left}, 0)`)
+  // .call(yAxis)
+  // .selectAll("text")
+  // .attr("font-size", "12px")
+  // .attr("fill", "black");
 
   /* Create the bars and append them to the chart
     Ref: https://observablehq.com/@d3/enter-update-exit */
