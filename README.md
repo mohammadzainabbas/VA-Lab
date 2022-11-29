@@ -76,7 +76,7 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab3) 
 #### 3.4. Lab 04 - Basic charts with d3.js
 
-[Vega-Altair](https://altair-viz.github.io/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite. In this lab, we will see how to use interactions with visualisation with [Vega-Altair](https://altair-viz.github.io/).
+[D3.js](https://d3js.org/) is a declarative statistical visualization library for Python, based on Vega and Vega-Lite. In this lab, we will see how to use interactions with visualisation with [Vega-Altair](https://altair-viz.github.io/).
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab3) 
 
