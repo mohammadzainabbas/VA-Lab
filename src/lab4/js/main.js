@@ -1,6 +1,9 @@
 /* Set the time format
   Ref: https://github.com/d3/d3-time-format */
 
+const parseTime = d3.timeParse("%Y");
+console.log(parseTime("2010"));
+
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
 d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
