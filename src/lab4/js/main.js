@@ -79,7 +79,7 @@ const createBarChart = (data) => {
 	.scaleBand()
 	.domain(data.map(d => d.country))
 	.range([margin.left, width - margin.right])
-	.paddingInner(0.2);
+	.paddingInner(0.35);
 
   console.groupCollapsed("xScale");
   console.log(xScale);
