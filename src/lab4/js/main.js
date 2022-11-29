@@ -7,55 +7,55 @@ console.log(parseTime("2010"));
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
 d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
-  // Print out the data on the console
-  console.groupCollapsed("Data from csv file");
-  console.table(data)
-  console.groupEnd()
+	// Print out the data on the console
+	console.groupCollapsed("Data from csv file");
+	console.table(data)
+	console.groupEnd()
 
-  /* Data Manipulation in D3 
-    Ref: https://observablehq.com/@d3/d3-extent?collection=@d3/d3-array */
+	/* Data Manipulation in D3 
+		Ref: https://observablehq.com/@d3/d3-extent?collection=@d3/d3-array */
 
-  // Get the minimum and maximum of the percent pay gap
-  const minPayGap = d3.min(data, d => d.value);
-  const maxPayGap = d3.max(data, d => d.value);
-  // const [min, max] = d3.extend(data, d => d.value);
+	// Get the minimum and maximum of the percent pay gap
+	const minPayGap = d3.min(data, d => d.value);
+	const maxPayGap = d3.max(data, d => d.value);
+	// const [min, max] = d3.extend(data, d => d.value);
 
-  console.groupCollapsed("Min and Max");
-  console.log(`Min pay gap: ${minPayGap}`);
-  console.log(`Max pay gap: ${maxPayGap}`);
-  console.groupEnd()
-  
-  // Filter the data from the year 2020
-  const data2020 = data.filter(d => d.year === 2020);
-  console.groupCollapsed("Data from 2020");
-  console.table(data2020)
-  console.groupEnd()
-  
-  // Sort the country by the percentage in the descending order
-  const sortedData = data2020.sort((a, b) => d3.descending(a.value, b.value));
-  console.groupCollapsed("Sorted Data");
-  console.table(sortedData)
-  console.groupEnd()
+	console.groupCollapsed("Min and Max");
+	console.log(`Min pay gap: ${minPayGap}`);
+	console.log(`Max pay gap: ${maxPayGap}`);
+	console.groupEnd()
+	
+	// Filter the data from the year 2020
+	const data2020 = data.filter(d => d.year === 2020);
+	console.groupCollapsed("Data from 2020");
+	console.table(data2020)
+	console.groupEnd()
+	
+	// Sort the country by the percentage in the descending order
+	const sortedData = data2020.sort((a, b) => d3.descending(a.value, b.value));
+	console.groupCollapsed("Sorted Data");
+	console.table(sortedData)
+	console.groupEnd()
 
-  // Get the mean and median of gender gap percentage
-  const mean = d3.mean(data2020, d => d.value);
-  const median = d3.median(data2020, d => d.value);
-  console.groupCollapsed("Mean and Median");
-  console.log(`Mean: ${mean}`);
-  console.log(`Median: ${median}`);
-  console.groupEnd()
+	// Get the mean and median of gender gap percentage
+	const mean = d3.mean(data2020, d => d.value);
+	const median = d3.median(data2020, d => d.value);
+	console.groupCollapsed("Mean and Median");
+	console.log(`Mean: ${mean}`);
+	console.log(`Median: ${median}`);
+	console.groupEnd()
 
-  // Move the color scale here to share with both charts
-  const colorScale = d3.scaleOrdinal()
-	.domain(data2020.map(d => d.country))
-    .range(d3.schemeTableau10);
-  console.log(`Color scale: ${colorScale}`);
+	// Move the color scale here to share with both charts
+	const colorScale = d3.scaleOrdinal()
+		.domain(data2020.map(d => d.country))
+		.range(d3.schemeTableau10);
+	console.log(`Color scale: ${colorScale}`);
 
-  // Plot the bar chart
-  createBarChart(data);
+	// Plot the bar chart
+	createBarChart(data);
 
-  // Plot the line chart
-  createLineChart(data);
+	// Plot the line chart
+	createLineChart(data);
 })
 
 const createBarChart = (data) => {
