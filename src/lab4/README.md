@@ -14,11 +14,9 @@
 
 ### 1. Introduction
 
-__`Data drives the world.`__ Nowadays, most of the data (_structured_ or _unstructured_) can be analysed easily via different techniques. In order to analyse your data, first you have to collect the data. 
+[D3.js](https://d3js.org/) is a producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards.
 
-There are several ways one can collect the data. `Web Scrapping` is one of the most powerful way to collect the data (often real-time or more correct data).
-
-In this lab, we will focus on some basic way to scrape the website data, and see how we can utilise some basic methods to convert a parsed web page into a table for analysing it later.
+In this lab, we will focus on learning how to generate some basic charts in `D3.js`.
 
 
 <a id="data" />
