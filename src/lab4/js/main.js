@@ -63,7 +63,7 @@ const createBarChart = (data) => {
     Ref: https://observablehq.com/@d3/margin-convention */
   
   const width = 900, height = 500;
-  const margin = {top: 20, right: 20, bottom: 50, left: 40};
+  const margin = {top: 20, right: 20, bottom: 80, left: 40};
   /* Create the SVG container */
   const svg = d3
   .select("#bar")
