@@ -17,9 +17,9 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   console.log(`Min pay gap: ${minPayGap}`);
   console.log(`Max pay gap: ${maxPayGap}`);
 
-
   // Filter the data from the year 2020
-  
+  const data2020 = data.filter(d => d.year === 2020);
+  console.log(`Data from 2020: ${data2020}`);
 
   // Sort the country by the percentage in the descending order
   
