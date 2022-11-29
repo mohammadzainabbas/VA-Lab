@@ -22,7 +22,8 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
   console.log(`Data from 2020: ${data2020}`);
 
   // Sort the country by the percentage in the descending order
-  
+  const sortedData = data2020.sort((a, b) => d3.descending(a.value, b.value));
+  console.log(`Sorted data: ${sortedData}`);
 
   // Get the mean and median of gender gap percentage
   
