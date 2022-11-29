@@ -1,10 +1,9 @@
 /* Set the time format
   Ref: https://github.com/d3/d3-time-format */
 
-
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
-d3.csv("../data/data.csv").then(data => {
+d3.csv(`/src/lab4/data/data.csv`).then(data => {
   // Print out the data on the console
   
 
