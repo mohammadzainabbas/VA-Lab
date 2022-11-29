@@ -102,35 +102,35 @@ const createBarChart = (data) => {
   const xAxis = d3.axisBottom(xScale);
   const yAxis = d3.axisLeft(yScale);
 
-  // svg.append("g")
-  // .attr("transform", `translate(0, ${height - margin.bottom})`)
-  // .call(xAxis)
-  // .selectAll("text")
-  // .attr("transform", "rotate(-45)")
-  // .attr("text-anchor", "end")
-  // .attr("font-size", "12px")
-  // .attr("fill", "black");
+  svg.append("g")
+  .attr("transform", `translate(0, ${height - margin.bottom})`)
+  .call(xAxis)
+  .selectAll("text")
+  .attr("transform", "rotate(-45)")
+  .attr("text-anchor", "end")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
 
-  // svg.append("g")
-  // .attr("transform", `translate(${margin.left}, 0)`)
-  // .call(yAxis)
-  // .selectAll("text")
-  // .attr("font-size", "12px")
-  // .attr("fill", "black");
+  svg.append("g")
+  .attr("transform", `translate(${margin.left}, 0)`)
+  .call(yAxis)
+  .selectAll("text")
+  .attr("font-size", "12px")
+  .attr("fill", "black");
 
   /* Create the bars and append them to the chart
     Ref: https://observablehq.com/@d3/enter-update-exit */
   
-  // svg.selectAll("rect")
-  // .data(data)
-  // .join("rect")
-  // .attr("x", d => xScale(d.country))
-  // .attr("y", d => yScale(d.value))
-  // .attr("width", xScale.bandwidth())
-  // .attr("height", d => yScale(0) - yScale(d.value))
-  // .attr("fill", d => colorScale(d.country))
-  // .attr("stroke", "black")
-  // .attr("stroke-width", 1);
+  svg.selectAll("rect")
+  .data(data)
+  .join("rect")
+  .attr("x", d => xScale(d.country))
+  .attr("y", d => yScale(d.value))
+  .attr("width", xScale.bandwidth())
+  .attr("height", d => yScale(0) - yScale(d.value))
+  .attr("fill", d => colorScale(d.country))
+  .attr("stroke", "black")
+  .attr("stroke-width", 1);
 
 
   /* Working with Color: https://observablehq.com/@d3/working-with-color 
