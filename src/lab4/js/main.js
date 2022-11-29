@@ -80,6 +80,13 @@ const createBarChart = (data) => {
   .domain(data.map(d => d.country))
   .range([margin.left, width - margin.right])
 
+  const yScale = d3
+  .scaleLinear()
+  .domain([0, d3.max(data, d => d.value)])
+  .range([height - margin.bottom, margin.top])
+
+  
+
   /* Working with Color: https://observablehq.com/@d3/working-with-color 
     d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
   
