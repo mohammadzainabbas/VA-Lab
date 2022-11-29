@@ -23,7 +23,7 @@ In this lab, we will focus on learning how to generate some basic charts in `D3.
 
 ### 2. Data
 
-For the purpose of this lab, we will use 
+You can see the data that we used in this lab [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab4/data/)
 
 #
 
