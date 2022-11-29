@@ -79,7 +79,13 @@ const createBarChart = (data) => {
   .scaleBand()
   .domain(data.map(d => d.country))
   .range([margin.left, width - margin.right])
-  .paddingInner(0.2;
+  .paddingInner(0.2);
+
+  console.groupCollapsed("xScale");
+  console.log(xScale);
+  console.log(xScale.bandwidth());
+  console.log(xScale.step());
+  console.groupEnd();
 
   const yScale = d3
   .scaleLinear()
