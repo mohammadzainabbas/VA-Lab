@@ -203,6 +203,7 @@ const createLineChart = (_data, colors) => {
 		.x(d => xScale(d.date))
 		.y(d => yScale(d.value))
 
+	line.curve(d3.curveBasis);
 
   /* Group the data for each country
     Ref: https://observablehq.com/@d3/d3-group */
