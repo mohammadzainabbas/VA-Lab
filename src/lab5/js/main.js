@@ -198,7 +198,11 @@ const createLineChart = (_data, colors) => {
 
   /* Construct a line generator
     Ref: https://observablehq.com/@d3/line-chart and https://github.com/d3/d3-shape */
-  
+	const line = d3
+		.line()
+		.x(d => xScale(d.date))
+		.y(d => yScale(d.value))
+
 
   /* Group the data for each country
     Ref: https://observablehq.com/@d3/d3-group */
