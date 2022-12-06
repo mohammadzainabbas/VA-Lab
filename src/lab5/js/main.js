@@ -168,32 +168,33 @@ const createBarChart = (data) => {
 
 const createLineChart = (_data, colors) => {
 	const data = _data.map(x => ({...x, "date": Date(x.year)}))
+
   /* Set the dimensions and margins of the graph */
-  const width = 900, height = 400;
-  const margin = {top: 20, right: 20, bottom: 80, left: 40};
+	const width = 900, height = 400;
+	const margin = {top: 20, right: 20, bottom: 80, left: 40};
   /* Create the SVG container */
-  const svg = d3
-	  .select("#line")
-	  .append("svg")
-	  .attr("viewBox", [0, 0, width, height]);  
+	const svg = d3
+		.select("#line")
+		.append("svg")
+		.attr("viewBox", [0, 0, width, height]);  
 
   /* Define x-axis, y-axis, and color scales */
-  const xScale = d3
-	  .scaleBand()
-	  .domain(data.map(d => d.country))
-	  .range([margin.left, width - margin.right])
-	  .paddingInner(0.35);
+  	const xScale = d3
+		.scaleBand()
+		.domain(data.map(d => d.country))
+		.range([margin.left, width - margin.right])
+		.paddingInner(0.35);
 
-  const yScale = d3
-	  .scaleLinear()
-	  .domain([0, d3.max(data, d => d.value)])
-	  .range([margin.left, width - margin.right])
-	//   .range([height - margin.bottom, margin.top])
+	  const yScale = d3
+		.scaleLinear()
+		.domain([0, d3.max(data, d => d.value)])
+		.range([margin.left, width - margin.right])
+		//   .range([height - margin.bottom, margin.top])
 
-  const colorScale = d3
-	  .scaleOrdinal()
-	  .domain(data.map(d => d.country))
-	  .range(colors);
+	const colorScale = d3
+		.scaleOrdinal()
+		.domain(data.map(d => d.country))
+		.range(colors);
 
   /* Construct a line generator
     Ref: https://observablehq.com/@d3/line-chart and https://github.com/d3/d3-shape */
