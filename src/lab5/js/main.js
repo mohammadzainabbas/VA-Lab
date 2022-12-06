@@ -166,7 +166,7 @@ const createBarChart = (data) => {
   
 }
 
-const createLineChart = (_data, colors) => {
+const createLineChart = (_data) => {
 	const data = _data.map(x => ({...x, "date": Date(x.year)}))
 
   /* Set the dimensions and margins of the graph */
@@ -221,7 +221,7 @@ const createLineChart = (_data, colors) => {
 		.attr("stroke-linecap", "round")
 		.append("title")
 		.text(d => `${d[0]}`);
-		
+
 
   /* Add the tooltip when hover on the line */
   
