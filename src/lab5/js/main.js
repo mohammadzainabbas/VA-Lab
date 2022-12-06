@@ -90,15 +90,15 @@ const createBarChart = (data) => {
 		.domain([0, d3.max(data, d => d.value)])
 		.range([height - margin.bottom, margin.top])
 
-	// const colorScale = d3
-	// .scaleOrdinal()
-	// .domain(data.map(d => d.country))
+	const colorScale = d3
+	.scaleOrdinal()
+	.domain(data.map(d => d.country))
+	.range(d3.schemeTableau10);
 	// .range(d3.schemeSpectral);
-	// .range(d3.schemeTableau10);
 	
-	const colorScale = d3.scaleSequential(d3.interpolatePiYG)
-		.domain(data.map(d => d.country))
-		.range(d3.schemeSpectral);
+	// const colorScale = d3.scaleSequential(d3.interpolatePiYG)
+	// 	.domain(data.map(d => d.country))
+	// 	.range(d3.schemeSpectral);
 
 	/* Create the x and y axes and append them to the chart
 		Ref: https://observablehq.com/@d3/axes */
@@ -134,7 +134,9 @@ const createBarChart = (data) => {
 		.attr("width", xScale.bandwidth())
 		.attr("height", d => yScale(0) - yScale(d.value))
 		.attr("fill", d => colorScale(d.country))
-		.attr("stroke-width", 1);
+		.attr("stroke-width", 1)
+		.append("title")
+		.text(d => `${d.country}: ${d.value}`);
 
 	/* Working with Color: https://observablehq.com/@d3/working-with-color 
 		d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
