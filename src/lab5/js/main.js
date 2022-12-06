@@ -3,6 +3,7 @@
 
 const parseTime = d3.timeParse("%Y");
 console.log(parseTime("2010"));
+console.log(parseTime(2010));
 
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
