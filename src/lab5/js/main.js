@@ -214,6 +214,8 @@ const createLineChart = (_data) => {
 	console.table(dataGroup);
 	console.groupEnd();
 
+	debugger
+
   /* Create line paths for each country */
   const path = svg.selectAll("path")
 	.data(dataGroup)
