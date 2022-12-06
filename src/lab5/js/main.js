@@ -168,6 +168,9 @@ const createBarChart = (data) => {
 
 const createLineChart = (_data) => {
 	const data = _data.map(x => ({...x, "date": parseTime(x.year)}))
+	console.groupCollapsed("Line Chart Data");
+	console.table(data);
+	console.groupEnd();
 
   /* Set the dimensions and margins of the graph */
 	const width = 900, height = 400;
