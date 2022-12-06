@@ -145,7 +145,7 @@ const createBarChart = (data) => {
 	/* Create the bar elements and append to the SVG group
 	Ref: https://observablehq.com/@d3/bar-chart */
 	
-	const rect = svg.append("g")
+	const bar_chart = svg.append("g")
 	.attr("class", "bar")
 	.selectAll("rect")
 	.data(data)
@@ -159,7 +159,8 @@ const createBarChart = (data) => {
 		.text(d => `${d.country}: ${d.value}`);
 	
 	/* Add the tooltip when hover on the bar */
-	
+	bar_chart.append("title")
+		.text(d => `${d.country}: ${d.value}`);
 	
 	/* Create the x and y axes and append them to the chart
 		Ref: https://www.d3indepth.com/axes/ and https://github.com/d3/d3-axis */
