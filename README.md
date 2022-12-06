@@ -10,6 +10,7 @@
   * [Lab 02 - Data Visualisation with Altair](#lab-2)
   * [Lab 03 - Interaction in Visualization with Altair](#lab-3)
   * [Lab 04 - Basic charts with d3.js](#lab-4)
+  * [Lab 05 - Basic charts with d3.js (continue)](#lab-5)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
   * [Setup `pre-commit` hooks](#setup-pre-commit)
@@ -83,6 +84,14 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 [D3.js](https://d3js.org/) is a producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards.
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab4) 
+
+<a id="lab-5" />
+
+#### 3.5. Lab 05 - Basic charts with d3.js (continue)
+
+[D3.js](https://d3js.org/) is a producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards.
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab5) 
 
 #
 
