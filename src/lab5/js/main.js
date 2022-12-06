@@ -226,7 +226,7 @@ const createLineChart = (_data) => {
 		// .style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
 		.style("fill", "transparent")
-		.attr("stroke", d => colorScale(d[0]))
+		.attr("stroke", ([i, d]) => colorScale(i))
 		// .attr("stroke-linejoin", "round")
 		// .attr("stroke-linecap", "round")
 		// .append("title")
