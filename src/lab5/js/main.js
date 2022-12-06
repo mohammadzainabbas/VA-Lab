@@ -112,25 +112,24 @@ const createBarChart = (data) => {
 		.attr("fill", "black");
 
 	svg.append("g")
-	.attr("transform", `translate(${margin.left}, 0)`)
-	.call(yAxis)
-	.selectAll("text")
-	.attr("font-size", "12px")
-	.attr("fill", "black");
+		.attr("transform", `translate(${margin.left}, 0)`)
+		.call(yAxis)
+		.selectAll("text")
+		.attr("font-size", "12px")
+		.attr("fill", "black");
 
 	/* Create the bars and append them to the chart
 		Ref: https://observablehq.com/@d3/enter-update-exit */
 	
 	svg.selectAll("rect")
-	.data(data)
-	.join("rect")
-	.attr("x", d => xScale(d.country))
-	.attr("y", d => yScale(d.value))
-	.attr("width", xScale.bandwidth())
-	.attr("height", d => yScale(0) - yScale(d.value))
-	.attr("fill", d => colorScale(d.country))
-	.attr("stroke-width", 1);
-
+		.data(data)
+		.join("rect")
+		.attr("x", d => xScale(d.country))
+		.attr("y", d => yScale(d.value))
+		.attr("width", xScale.bandwidth())
+		.attr("height", d => yScale(0) - yScale(d.value))
+		.attr("fill", d => colorScale(d.country))
+		.attr("stroke-width", 1);
 
 	/* Working with Color: https://observablehq.com/@d3/working-with-color 
 		d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
