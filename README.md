@@ -10,6 +10,7 @@
   * [Lab 02 - Data Visualisation with Altair](#lab-2)
   * [Lab 03 - Interaction in Visualization with Altair](#lab-3)
   * [Lab 04 - Basic charts with d3.js](#lab-4)
+  * [Lab 05 - Basic charts with d3.js (continue)](#lab-5)
 - [Setup](#setup)
   * [Create new enviornment](#create-new-env)
   * [Setup `pre-commit` hooks](#setup-pre-commit)
