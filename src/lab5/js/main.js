@@ -221,12 +221,12 @@ const createLineChart = (_data) => {
 		.attr("d", ([i, d]) => line(d))
 		.attr("stroke", 'lightgrey')
 		.attr("stroke-width", 2)
-		.attr("fill", "none")
-		.attr("stroke", d => colorScale(d[0]))
-		.attr("stroke-linejoin", "round")
-		.attr("stroke-linecap", "round")
-		.append("title")
-		.text(d => `${d[0]}`);
+		.attr("fill", "transparent")
+		// .attr("stroke", d => colorScale(d[0]))
+		// .attr("stroke-linejoin", "round")
+		// .attr("stroke-linecap", "round")
+		// .append("title")
+		// .text(d => `${d[0]}`);
 
 
   /* Add the tooltip when hover on the line */
