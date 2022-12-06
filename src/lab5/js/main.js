@@ -159,8 +159,7 @@ const createBarChart = (data) => {
 		.text(d => `${d.country}: ${d.value}`);
 	
 	/* Add the tooltip when hover on the bar */
-	bar_chart.append("title")
-		.text(d => `${d.country}: ${d.value}`);
+	bar_chart.attr("title", d => `${d.country}: ${d.value}`);
 	
 	/* Create the x and y axes and append them to the chart
 		Ref: https://www.d3indepth.com/axes/ and https://github.com/d3/d3-axis */
