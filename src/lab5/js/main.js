@@ -223,9 +223,7 @@ const createLineChart = (_data) => {
   const path = svg.selectAll("path")
 	.data(dataGroup)
 	.join("path")
-		.attr("d", ([i, d]) => {
-			// debugger
-			line(d)})
+		.attr("d", ([i, d]) => line(d))
 		.style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
 		.style("fill", "transparent")
