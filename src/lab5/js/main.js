@@ -188,8 +188,7 @@ const createLineChart = (_data) => {
 	  const yScale = d3
 		.scaleLinear()
 		.domain([0, d3.max(data, d => d.value)])
-		.range([margin.left, width - margin.right])
-		//   .range([height - margin.bottom, margin.top])
+		.range([height - margin.bottom, margin.top])
 
 	const colorScale = d3
 		.scaleOrdinal()
@@ -220,9 +219,10 @@ const createLineChart = (_data) => {
 	.data(dataGroup)
 	.join("path")
 		.attr("d", ([i, d]) => line(d))
+		.attr("stroke", 'lightgrey')
+		.attr("stroke-width", 2)
 		.attr("fill", "none")
 		.attr("stroke", d => colorScale(d[0]))
-		.attr("stroke-width", 2)
 		.attr("stroke-linejoin", "round")
 		.attr("stroke-linecap", "round")
 		.append("title")
