@@ -56,8 +56,8 @@ const createBarChart = (data) => {
   /* Create the SVG container */
   const svg = d3.select("#bar")
     .append("svg")
-      // .attr("width", width)
-      // .attr("height", height)
+      .attr("width", width)
+      .attr("height", height)
       .attr("viewBox", [0, 0, width, height]);
 
   /* Define x-axis, y-axis, and color scales
