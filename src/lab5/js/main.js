@@ -187,7 +187,8 @@ const createLineChart = (data, colors) => {
   const yScale = d3
 	  .scaleLinear()
 	  .domain([0, d3.max(data, d => d.value)])
-	  .range([height - margin.bottom, margin.top])
+	  .range([margin.left, width - margin.right])
+	//   .range([height - margin.bottom, margin.top])
 
   const colorScale = d3
 	  .scaleOrdinal()
