@@ -223,15 +223,14 @@ const createLineChart = (_data) => {
 	.data(dataGroup)
 	.join("path")
 		.attr("d", ([i, d]) => line(d))
-		// .style("stroke", 'lightgrey')
+		.style("stroke", 'lightgrey')
+		// .attr("stroke", ([i, d]) => colorScale(i))
 		.style("stroke-width", 2)
 		.style("fill", "transparent")
-		.attr("stroke", ([i, d]) => colorScale(i))
 		.attr("stroke-linejoin", "round")
 		.attr("stroke-linecap", "round")
 		.append("title")
 		.text(d => `${d[0]}`);
-
 
   /* Add the tooltip when hover on the line */
   
