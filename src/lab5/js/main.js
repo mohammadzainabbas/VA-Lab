@@ -194,7 +194,7 @@ const createLineChart = (_data) => {
 	const colorScale = d3
 		.scaleOrdinal()
 		.domain(data.map(d => d.country))
-		.range(colors);
+		.range(d3.schemeTableau10);
 
   /* Construct a line generator
     Ref: https://observablehq.com/@d3/line-chart and https://github.com/d3/d3-shape */
