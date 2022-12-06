@@ -126,17 +126,17 @@ const createBarChart = (data) => {
 	/* Create the bars and append them to the chart
 		Ref: https://observablehq.com/@d3/enter-update-exit */
 	
-	svg.selectAll("rect")
-		.data(data)
-		.join("rect")
-		.attr("x", d => xScale(d.country))
-		.attr("y", d => yScale(d.value))
-		.attr("width", xScale.bandwidth())
-		.attr("height", d => yScale(0) - yScale(d.value))
-		.attr("fill", d => colorScale(d.country))
-		.attr("stroke-width", 1)
-		.append("title")
-		.text(d => `${d.country}: ${d.value}`);
+	// svg.selectAll("rect")
+	// 	.data(data)
+	// 	.join("rect")
+	// 	.attr("x", d => xScale(d.country))
+	// 	.attr("y", d => yScale(d.value))
+	// 	.attr("width", xScale.bandwidth())
+	// 	.attr("height", d => yScale(0) - yScale(d.value))
+	// 	.attr("fill", d => colorScale(d.country))
+	// 	.attr("stroke-width", 1)
+	// 	.append("title")
+	// 	.text(d => `${d.country}: ${d.value}`);
 
 	/* Working with Color: https://observablehq.com/@d3/working-with-color 
 		d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
@@ -145,8 +145,7 @@ const createBarChart = (data) => {
 	/* Create the bar elements and append to the SVG group
 		Ref: https://observablehq.com/@d3/bar-chart */
 	
-	  svg
-		.append("g")
+	svg.append("g")
 		.attr("class", "bar")
 		.selectAll("rect")
 		.data(data)
