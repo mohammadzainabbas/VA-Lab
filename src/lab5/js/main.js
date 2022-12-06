@@ -167,10 +167,10 @@ const createBarChart = (data) => {
 }
 
 const createLineChart = (_data, colors) => {
+	const data = _data.map(x => ({...x, "date": Date(x.year)}))
   /* Set the dimensions and margins of the graph */
   const width = 900, height = 400;
   const margin = {top: 20, right: 20, bottom: 80, left: 40};
-  const data = _data.map(x => ({...x, "date": Date(x.year)}))
   /* Create the SVG container */
   const svg = d3
 	  .select("#line")
