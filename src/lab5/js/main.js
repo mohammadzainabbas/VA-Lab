@@ -185,11 +185,9 @@ const createLineChart = (_data) => {
   	const xScale = d3
 		.scaleTime()
 		.domain(d3.extent(data, d => d.date))
-		// .domain(data.map(d => d.country))
-		.range([margin.left, width - margin.right])
-		.paddingInner(0.35);
+		.range([margin.left, width - margin.right]);
 
-	  const yScale = d3
+	const yScale = d3
 		.scaleLinear()
 		.domain([0, d3.max(data, d => d.value)])
 		.range([height - margin.bottom, margin.top])
