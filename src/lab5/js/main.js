@@ -204,6 +204,10 @@ const createLineChart = (_data) => {
 		.x(d => xScale(d.date))
 		.y(d => yScale(d.value))
 
+	console.groupCollapsed("line");
+	console.log(line);
+	console.groupEnd();
+
   /* Group the data for each country
     Ref: https://observablehq.com/@d3/d3-group */
 	const dataGroup = d3.group(data, d => d.country);
