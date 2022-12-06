@@ -211,7 +211,9 @@ const createLineChart = (_data) => {
   /* Group the data for each country
     Ref: https://observablehq.com/@d3/d3-group */
 	const dataGroup = d3.group(data, d => d.country);
-  
+	console.groupCollapsed("dataGroup");
+	console.table(dataGroup);
+	console.groupEnd();
 
   /* Create line paths for each country */
   const path = svg.selectAll("path")
