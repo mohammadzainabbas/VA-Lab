@@ -214,13 +214,15 @@ const createLineChart = (_data) => {
 	console.table(dataGroup);
 	console.groupEnd();
 
-	debugger
+	// debugger
 
   /* Create line paths for each country */
   const path = svg.selectAll("path")
 	.data(dataGroup)
 	.join("path")
-		.attr("d", ([i, d]) => line(d))
+		.attr("d", ([i, d]) => {
+			debugger
+			line(d)})
 		.style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
 		.style("fill", "transparent")
