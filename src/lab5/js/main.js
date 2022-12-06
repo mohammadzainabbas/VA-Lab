@@ -106,7 +106,9 @@ const createBarChart = (data) => {
 	.selectAll("text")
 	.attr("transform", "rotate(-45)")
 	.attr("text-anchor", "end")
-	.attr("font-size", "12px")
+	.attr("dx", "-.8em")
+	.attr("dy", ".15em")
+	// .attr("font-size", "12px")
 	.attr("fill", "black");
 
 	svg.append("g")
