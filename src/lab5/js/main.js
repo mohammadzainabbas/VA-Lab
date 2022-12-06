@@ -224,7 +224,7 @@ const createLineChart = (_data) => {
 	.data(dataGroup)
 	.join("path")
 		.attr("d", ([i, d]) => {
-			// debugger
+			debugger
 			line(d)})
 		.style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
