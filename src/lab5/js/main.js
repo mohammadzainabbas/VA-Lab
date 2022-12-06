@@ -52,7 +52,7 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
 	console.log(`Color scale: ${colorScale}`);
 
 	// Plot the bar chart
-	createBarChart(data);
+	// createBarChart(data);
 
 	// Plot the line chart
 	createLineChart(data);
@@ -223,10 +223,10 @@ const createLineChart = (_data) => {
 	.data(dataGroup)
 	.join("path")
 		.attr("d", ([i, d]) => line(d))
-		.style("stroke", 'lightgrey')
+		// .style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
 		.style("fill", "transparent")
-		// .attr("stroke", d => colorScale(d[0]))
+		.attr("stroke", d => colorScale(d[0]))
 		// .attr("stroke-linejoin", "round")
 		// .attr("stroke-linecap", "round")
 		// .append("title")
