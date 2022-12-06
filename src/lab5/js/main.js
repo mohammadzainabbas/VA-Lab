@@ -176,7 +176,6 @@ const createLineChart = (data, colors) => {
 	  .select("#line")
 	  .append("svg")
 	  .attr("viewBox", [0, 0, width, height]);  
-  
 
   /* Define x-axis, y-axis, and color scales */
   
