@@ -145,17 +145,17 @@ const createBarChart = (data) => {
 	/* Create the bar elements and append to the SVG group
 		Ref: https://observablehq.com/@d3/bar-chart */
 	
-	//   svg
-	// 	.append("g")
-	// 	.attr("class", "bar")
-	// 	.selectAll("rect")
-	// 	.data(data)
-	// 	.join("rect")
-	// 		.attr("x", d => xScale(d.country))
-	// 		.attr("y", d => yScale(d.value))
-	// 		.attr("width", xScale.bandwidth())
-	// 		.attr("height", d => yScale(0) - yScale(d.value))
-	// 		.attr("fill", d => colorScale(d.country))
+	  svg
+		.append("g")
+		.attr("class", "bar")
+		.selectAll("rect")
+		.data(data)
+		.join("rect")
+			.attr("x", d => xScale(d.country))
+			.attr("y", d => yScale(d.value))
+			.attr("width", xScale.bandwidth())
+			.attr("height", d => yScale(0) - yScale(d.value))
+			.attr("fill", d => colorScale(d.country))
 
 	/* Add the tooltip when hover on the bar */
 	
