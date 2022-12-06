@@ -5,7 +5,7 @@ console.log(parseTime("2020"));
 
 /* Load the dataset and formatting variables
   Ref: https://www.d3indepth.com/requests/ */
-d3.csv("../data/data.csv", d => {
+d3.csv("/src/lab5/data/data.csv", d => {
   return {
     'geo': d.geo,
     'country': d.country,
