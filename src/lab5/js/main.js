@@ -184,7 +184,8 @@ const createLineChart = (_data) => {
   /* Define x-axis, y-axis, and color scales */
   	const xScale = d3
 		.scaleTime()
-		.domain(data.map(d => d.country))
+		.domain(d3.extent(data, d => d.date))
+		// .domain(data.map(d => d.country))
 		.range([margin.left, width - margin.right])
 		.paddingInner(0.35);
 
