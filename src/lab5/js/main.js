@@ -102,14 +102,14 @@ const createBarChart = (data) => {
 	const yAxis = d3.axisLeft(yScale);
 
 	svg.append("g")
-	.attr("transform", `translate(0, ${height - margin.bottom})`)
-	.call(xAxis)
-	.selectAll("text")
-	.attr("transform", "rotate(-45)")
-	.attr("text-anchor", "end")
-	.attr("dx", "-.8em")
-	.attr("dy", ".15em")
-	.attr("fill", "black");
+		.attr("transform", `translate(0, ${height - margin.bottom})`)
+		.call(xAxis)
+		.selectAll("text")
+		.attr("transform", "rotate(-45)")
+		.attr("text-anchor", "end")
+		.attr("dx", "-.8em")
+		.attr("dy", ".15em")
+		.attr("fill", "black");
 
 	svg.append("g")
 	.attr("transform", `translate(${margin.left}, 0)`)
