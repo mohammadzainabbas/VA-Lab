@@ -90,7 +90,8 @@ const createBarChart = (data) => {
 		.domain([0, d3.max(data, d => d.value)])
 		.range([height - margin.bottom, margin.top])
 
-	const colorScale = d3.scaleOrdinal()
+	const colorScale = d3
+    	.scaleOrdinal()
 		.domain(data.map(d => d.country))
 		.range(d3.schemeTableau10);
 
