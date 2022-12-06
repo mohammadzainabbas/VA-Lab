@@ -93,7 +93,8 @@ const createBarChart = (data) => {
 	const colorScale = d3
     	.scaleOrdinal()
 		.domain(data.map(d => d.country))
-		.range(d3.schemeTableau10);
+		.range(d3.schemeSpectral);
+		// .range(d3.schemeTableau10);
 
 	/* Create the x and y axes and append them to the chart
 		Ref: https://observablehq.com/@d3/axes */
