@@ -210,7 +210,18 @@ const createLineChart = (_data, colors) => {
   
 
   /* Create line paths for each country */
-  
+  const path = svg.selectAll("path")
+	.data(dataGroup)
+	.join("path")
+		.attr("d", d => line(d[1]))
+		.attr("fill", "none")
+		.attr("stroke", d => colorScale(d[0]))
+		.attr("stroke-width", 2)
+		.attr("stroke-linejoin", "round")
+		.attr("stroke-linecap", "round")
+		.append("title")
+		.text(d => `${d[0]}`);
+		
 
   /* Add the tooltip when hover on the line */
   
