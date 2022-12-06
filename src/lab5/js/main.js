@@ -168,7 +168,7 @@ const createBarChart = (data) => {
 }
 
 const createLineChart = (_data) => {
-	const data = _data.map(x => ({...x, "date": Date(x.year)}))
+	const data = _data.map(x => ({...x, "date": parseTime(x.year)}))
 
   /* Set the dimensions and margins of the graph */
 	const width = 900, height = 400;
@@ -222,7 +222,7 @@ const createLineChart = (_data) => {
 	.data(dataGroup)
 	.join("path")
 		.attr("d", ([i, d]) => {
-			debugger
+			// debugger
 			line(d)})
 		.style("stroke", 'lightgrey')
 		.style("stroke-width", 2)
