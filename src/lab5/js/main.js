@@ -200,6 +200,7 @@ const createLineChart = (_data, colors) => {
     Ref: https://observablehq.com/@d3/line-chart and https://github.com/d3/d3-shape */
 	const line = d3
 		.line()
+		.curve(d3.curveBasis)
 		.x(d => xScale(d.date))
 		.y(d => yScale(d.value))
 
