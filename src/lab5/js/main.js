@@ -128,7 +128,6 @@ const createBarChart = (data) => {
 	.attr("width", xScale.bandwidth())
 	.attr("height", d => yScale(0) - yScale(d.value))
 	.attr("fill", d => colorScale(d.country))
-	// .attr("stroke", "black")
 	.attr("stroke-width", 1);
 
 
