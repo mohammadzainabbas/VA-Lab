@@ -52,7 +52,7 @@ d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
 	console.log(`Color scale: ${colorScale}`);
 
 	// Plot the bar chart
-	createBarChart(data);
+	// createBarChart(data);
 
 	// Plot the line chart
 	createLineChart(data);
