@@ -168,7 +168,13 @@ const createBarChart = (data) => {
 
 const createLineChart = (data, colors) => {
   /* Set the dimensions and margins of the graph */
-  
+  const width = 900, height = 500;
+  const margin = {top: 20, right: 20, bottom: 80, left: 40};
+  /* Create the SVG container */
+  const svg = d3
+	  .select("#bar")
+	  .append("svg")
+	  .attr("viewBox", [0, 0, width, height]);  
 
   /* Create the SVG container */
   
