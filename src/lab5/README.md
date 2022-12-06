@@ -1,4 +1,4 @@
-## Lab 04 - Basic charts with d3.js 👨🏻‍💻
+## Lab 05 - Basic charts with d3.js 👨🏻‍💻
 
 ### Table of contents
 
