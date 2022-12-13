@@ -54,9 +54,10 @@ const createBarChart = (data, colors) => {
   let bar = svg.append("g")
     .selectAll("rect")
 // TODO: Add geo as id to refer to the data point
-    .data(newData)
+    .data(newData,d=>d.geo)
     .join("rect")
 // TODO: Add geo as the class
+      .attr('class',d=>d.geo)
       .attr("x", d => xScale(d.country))
       .attr("y", d => yScale(d.value))
       .attr("height", d => yScale(0) - yScale(d.value))
@@ -118,6 +119,7 @@ const createBarChart = (data, colors) => {
 // TODO: 1.1 Add event listener to the year slider
   d3.select("#yearSlider").on("change", function(e) {
     // Get the year selected
+ 
 
 
     // Update the chart
@@ -137,9 +139,12 @@ const createBarChart = (data, colors) => {
   function update() {
     // 1.4 Get the selected year and sorting method
     
+    const year=d3.select('#yearSlider').node().value;
+    const sort=d3.select('#sort').node().value;
+
 
     // 1.5. Filter and sorting the new data
-    /*newData = data.filter(data => data.year == year);
+    let newData = data.filter(data => data.year == year);
 
     if (sort == 'alphabet') {
       newData = newData.sort((a, b) => d3.ascending(a.country, b.country));
@@ -149,27 +154,44 @@ const createBarChart = (data, colors) => {
     }
     else {
       newData = newData.sort((a, b) => d3.descending(a.value, b.value));
-    }*/
+    }
 
     // 1.6 Define new x and y scales
-    /*const xScale = d3.scaleBand()
+    const xScale = d3.scaleBand()
         .domain(newData.map(d => d.country))
         .range([margins.left, width - margins.right])
         .padding(0.2);
 
     const yScale = d3.scaleLinear()
       .domain([0, d3.max(newData, d => d.value)])
-      .range([height - margins.bottom, margins.top]);*/
+      .range([height - margins.bottom, margins.top]);
 
     // 1.7. Define a transition.
-    
+    const t=d3.transition().duration(1000);
     
     // 1.8 Update the bar chart with enter, update, and exit pattern
-    
+    bar=bar.data(newData,d=>d.geo).join(
+      enter=> enter.append('rect')
+        .attr('class',d=>d.geo)
+        .attr("x", d => xScale(d.country))
+        .attr("y", d => yScale(d.value))
+        .attr("height", d => yScale(0) - yScale(d.value))
+        .attr("width", xScale.bandwidth())
+        .attr("fill", d => colors(d.country)),
+      update=>update.transition(t)
+        .attr("x", d => xScale(d.country))
+        .attr("y", d => yScale(d.value))
+        .attr("height", d => yScale(0) - yScale(d.value))
+        .attr("width", xScale.bandwidth()),
+      exit=>exit.transition(t)
+        .attr('y',yscale(0))
+        .attr('height',0)
+        .remove()
+      );
       
     // 1.9 Transition on the x and y axes
-    /*const xAxis = d3.axisBottom(xScale)
-    const yAxis = d3.axisLeft(yScale)
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
 
     xGroup.transition(t)
       .call(xAxis)
@@ -184,7 +206,7 @@ const createBarChart = (data, colors) => {
     yGroup.transition(t)
         .call(yAxis)
       .selection()
-        .call(g => g.select(".domain").remove());*/
+        .call(g => g.select(".domain").remove());
   }
 }
 
@@ -215,18 +237,21 @@ const createLineChart = (data, colors) => {
 
   // Group the data for each country
 // TODO: Change to group the data by geo
-  const group = d3.group(data, d => d.country);
+  const group = d3.group(data, d => d.geo);
 
   // Draw a line path for each country
   const path = svg.selectAll('path')
       .data(group)
       .join('path')
 // TODO: Add the geo as the class
+        .attr('class',([i, d]) => i)
         .attr('d', ([i, d]) => line(d))
 // TODO: Change the color to lightgrey
-        .style('stroke', ([i, d])=> colors(i))
+        .style('stroke', 'lightgrey')
+        // .style('stroke', ([i, d])=> colors(i))
         .style('stroke-width', 2)
         .style('fill', 'transparent')
+        .style('opacity',0.5);
 // TODO: Add the opacity to each line
 
   // Add the tooltip when hover on the line
@@ -261,5 +286,5 @@ const createLineChart = (data, colors) => {
     .text(d => d.country);
 
 // TODO: Hide text labels when unselected
-
+  labels.style('visibility','hidden');
 }
