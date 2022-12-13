@@ -294,7 +294,7 @@ const createLineChart = (data, colors) => {
   labels.style('visibility','hidden');
 }
 
-const async main => {
+const main = async () => {
   const DATA_URL = "/src/lab6/data/data.csv";
 
   // Load the dataset and formatting variables
@@ -323,4 +323,6 @@ const async main => {
   // Plot the line chart
   createLineChart(data, colors);
 
-})();
+};
+
+main();
