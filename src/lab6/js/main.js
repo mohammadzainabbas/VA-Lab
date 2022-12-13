@@ -1,243 +1,265 @@
-/* Set the time format
-  Ref: https://github.com/d3/d3-time-format */
-
+// Set the time format
 const parseTime = d3.timeParse("%Y");
-console.log(parseTime("2010"));
 
-/* Load the dataset and formatting variables
-  Ref: https://www.d3indepth.com/requests/ */
-d3.csv(`/src/lab4/data/data.csv`, d3.autoType).then(data => {
-	// Print out the data on the console
-	console.groupCollapsed("Data from csv file");
-	console.table(data)
-	console.groupEnd()
+// Load the dataset and formatting variables
+d3.csv("../data/data.csv", d => {
+  return {
+    geo: d.geo,
+    country: d.country,
+    year: +d.year,
+    value: +d.value,
+    date: parseTime(d.year)
+  }
+}).then(data => {
+  // We need to make sure that the data are sorted correctly by country and then by year
+  data = data.sort((a, b) => d3.ascending(a.country, b.country) || d3.ascending(a.year, b.year));
 
-	/* Data Manipulation in D3 
-		Ref: https://observablehq.com/@d3/d3-extent?collection=@d3/d3-array */
+  // Define the color scale for countries
+  const countries = Array.from(new Set(data.map(d => d.country))).sort();
+  const colors = d3.scaleOrdinal()
+    .domain(countries)
+    .range(d3.quantize(d3.interpolateRainbow, countries.length));
 
-	// Get the minimum and maximum of the percent pay gap
-	const minPayGap = d3.min(data, d => d.value);
-	const maxPayGap = d3.max(data, d => d.value);
-	// const [min, max] = d3.extend(data, d => d.value);
+  // Plot the bar chart
+  createBarChart(data, colors);
 
-	console.groupCollapsed("Min and Max");
-	console.log(`Min pay gap: ${minPayGap}`);
-	console.log(`Max pay gap: ${maxPayGap}`);
-	console.groupEnd()
-	
-	// Filter the data from the year 2020
-	const data2020 = data.filter(d => d.year === 2020);
-	console.groupCollapsed("Data from 2020");
-	console.table(data2020)
-	console.groupEnd()
-	
-	// Sort the country by the percentage in the descending order
-	const sortedData = data2020.sort((a, b) => d3.descending(a.value, b.value));
-	console.groupCollapsed("Sorted Data");
-	console.table(sortedData)
-	console.groupEnd()
-
-	// Get the mean and median of gender gap percentage
-	const mean = d3.mean(data2020, d => d.value);
-	const median = d3.median(data2020, d => d.value);
-	console.groupCollapsed("Mean and Median");
-	console.log(`Mean: ${mean}`);
-	console.log(`Median: ${median}`);
-	console.groupEnd()
-
-	// Move the color scale here to share with both charts
-	const colorScale = d3.scaleOrdinal()
-		.domain(data2020.map(d => d.country))
-		.range(d3.schemeTableau10);
-	// console.log(`Color scale: ${colorScale}`);
-
-	// Plot the bar chart
-	// createBarChart(data);
-
-	// Plot the line chart
-	createLineChart(data);
+  // Plot the line chart
+  createLineChart(data, colors);
 })
 
-const createBarChart = (data) => {
-	/* Set the dimensions and margins of the graph
-		Ref: https://observablehq.com/@d3/margin-convention */
-	
-	const width = 900, height = 500;
-	const margin = {top: 20, right: 20, bottom: 80, left: 40};
-	/* Create the SVG container */
-	const svg = d3
-		.select("#bar")
-		.append("svg")
-		.attr("viewBox", [0, 0, width, height]);
+const createBarChart = (data, colors) => {
+  // Set the dimensions and margins of the graph
+  const width = 900, height = 400;
+  const margins = {top: 10, right: 30, bottom: 80, left: 20};
 
-	/* Define x-axis, y-axis, and color scales
-		Ref: https://observablehq.com/@d3/introduction-to-d3s-scales */
-	
-	const xScale = d3
-		.scaleBand()
-		.domain(data.map(d => d.country))
-		.range([margin.left, width - margin.right])
-		.paddingInner(0.35);
+  // Filter the data from the year 2020
+  let newData = data.filter(data => data.year == 2020);
 
-	console.groupCollapsed("xScale");
-	console.log(xScale);
-	console.log(xScale.bandwidth());
-	console.log(xScale.step());
-	console.groupEnd();
+  // Create the SVG container
+  const svg = d3.select("#bar")
+    .append("svg")
+    .attr("viewBox", [0, 0, width, height]);
 
-	const yScale = d3
-		.scaleLinear()
-		.domain([0, d3.max(data, d => d.value)])
-		.range([height - margin.bottom, margin.top])
-
-	const colorScale = d3
-	.scaleOrdinal()
-	.domain(data.map(d => d.country))
-	.range(d3.schemeTableau10);
-	// .range(d3.schemeSpectral);
-	
-	// const colorScale = d3.scaleSequential(d3.interpolatePiYG)
-	// 	.domain(data.map(d => d.country))
-	// 	.range(d3.schemeSpectral);
-
-	/* Create the x and y axes and append them to the chart
-		Ref: https://observablehq.com/@d3/axes */
-	
-	const xAxis = d3.axisBottom(xScale);
-	const yAxis = d3.axisLeft(yScale);
-
-	svg.append("g")
-		.attr("transform", `translate(0, ${height - margin.bottom})`)
-		.call(xAxis)
-		.selectAll("text")
-		.attr("transform", "rotate(-45)")
-		.attr("text-anchor", "end")
-		.attr("dx", "-.8em")
-		.attr("dy", ".15em")
-		.attr("fill", "black");
-
-	svg.append("g")
-		.attr("transform", `translate(${margin.left}, 0)`)
-		.call(yAxis)
-		.selectAll("text")
-		.attr("font-size", "12px")
-		.attr("fill", "black");
-
-	/* Create the bars and append them to the chart
-		Ref: https://observablehq.com/@d3/enter-update-exit */
-	
-	// svg.selectAll("rect")
-	// 	.data(data)
-	// 	.join("rect")
-	// 	.attr("x", d => xScale(d.country))
-	// 	.attr("y", d => yScale(d.value))
-	// 	.attr("width", xScale.bandwidth())
-	// 	.attr("height", d => yScale(0) - yScale(d.value))
-	// 	.attr("fill", d => colorScale(d.country))
-	// 	.attr("stroke-width", 1)
-	// 	.append("title")
-	// 	.text(d => `${d.country}: ${d.value}`);
-	
-	/* Working with Color: https://observablehq.com/@d3/working-with-color 
-	d3-scale-chromatic: https://github.com/d3/d3-scale-chromatic */
-	
-	
-	/* Create the bar elements and append to the SVG group
-	Ref: https://observablehq.com/@d3/bar-chart */
-	
-	const bar_chart = svg.append("g")
-	.attr("class", "bar")
-	.selectAll("rect")
-	.data(data)
-	.join("rect")
-		.attr("x", d => xScale(d.country))
-		.attr("y", d => yScale(d.value))
-		.attr("width", xScale.bandwidth())
-		.attr("height", d => yScale(0) - yScale(d.value))
-		.attr("fill", d => colorScale(d.country))
-		.append("title")
-		.text(d => `${d.country}: ${d.value}`);
-	
-	/* Add the tooltip when hover on the bar */
-	bar_chart.attr("title", d => `${d.country}: ${d.value}`);
-	
-	/* Create the x and y axes and append them to the chart
-		Ref: https://www.d3indepth.com/axes/ and https://github.com/d3/d3-axis */
+  // Define x-axis, y-axis, and color scales
+  const xScale = d3.scaleBand()
+    .domain(newData.map(d => d.country))
+    .range([margins.left, width - margins.right])
+    .padding(0.2);
   
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(newData, d => d.value)])
+    .range([height - margins.bottom, margins.top]);
+
+  // Create the bar elements and append to the SVG group
+  let bar = svg.append("g")
+    .selectAll("rect")
+// TODO: Add geo as id to refer to the data point
+    .data(newData)
+    .join("rect")
+// TODO: Add geo as the class
+      .attr("x", d => xScale(d.country))
+      .attr("y", d => yScale(d.value))
+      .attr("height", d => yScale(0) - yScale(d.value))
+      .attr("width", xScale.bandwidth())
+      .attr("fill", d => colors(d.country));
+
+// TODO: 2.1 Add event listener to each bar
+  bar.on("mouseover", function() {
+    // 2.2 Get the geo and color of the selected bar
+
+
+    // 2.3 Highlight the bar with black stroke
+    
+
+    // 2.4 Highlight the line with the color
+    
+
+    // 2.5 Make the text label visible
+    
+  });
+
+  bar.on("mouseout", function() {
+    // 2.6 Get the geo of the selected bar
+    
+
+    // 2.7 Change the highlight stroke in the bar back to normal
+    
+
+    // 2.8 Change the line color to lightgrey
+    
+
+    // 2.9 Make the text label invisible again
+    
+  });
+
+  // Add the tooltip when hover on the bar
+  bar.append('title').text(d => d.country);
+  
+  // Create the x and y axes and append them to the chart
+  const yAxis = d3.axisLeft(yScale);
+
+  const yGroup = svg.append("g")
+      .attr("transform", `translate(${margins.left},0)`)
+    .call(yAxis)
+    .call(g => g.select(".domain").remove());
+
+  const xAxis = d3.axisBottom(xScale);
+
+  const xGroup = svg.append("g")
+      .attr("transform", `translate(0,${height - margins.bottom})`)
+    .call(xAxis);
+
+  xGroup.selectAll("text")
+    .style("text-anchor", "end")
+    .attr("dx", "-.8em")
+    .attr("dy", ".15em")
+    .attr("transform", "rotate(-65)");
+
+// TODO: 1.1 Add event listener to the year slider
+  d3.select("#yearSlider").on("change", function(e) {
+    // Get the year selected
+
+
+    // Update the chart
+    update();
+  });
+
+// TODO: 1.2 Add event listener to the sort dropdown
+  d3.select("#sort").on("change", function(e) {
+    // Get the sorting option selected
+
+
+    // Updte the chart
+    update();
+  });
+
+// TODO: 1.3 Update the bar chart based on new inputs
+  function update() {
+    // 1.4 Get the selected year and sorting method
+    
+
+    // 1.5. Filter and sorting the new data
+    /*newData = data.filter(data => data.year == year);
+
+    if (sort == 'alphabet') {
+      newData = newData.sort((a, b) => d3.ascending(a.country, b.country));
+    }
+    else if (sort == 'pctAsce') {
+      newData = newData.sort((a, b) => d3.ascending(a.value, b.value));
+    }
+    else {
+      newData = newData.sort((a, b) => d3.descending(a.value, b.value));
+    }*/
+
+    // 1.6 Define new x and y scales
+    /*const xScale = d3.scaleBand()
+        .domain(newData.map(d => d.country))
+        .range([margins.left, width - margins.right])
+        .padding(0.2);
+
+    const yScale = d3.scaleLinear()
+      .domain([0, d3.max(newData, d => d.value)])
+      .range([height - margins.bottom, margins.top]);*/
+
+    // 1.7. Define a transition.
+    
+    
+    // 1.8 Update the bar chart with enter, update, and exit pattern
+    
+      
+    // 1.9 Transition on the x and y axes
+    /*const xAxis = d3.axisBottom(xScale)
+    const yAxis = d3.axisLeft(yScale)
+
+    xGroup.transition(t)
+      .call(xAxis)
+      .call(g => g.selectAll(".tick"));
+
+    xGroup.selectAll("text")
+      .style("text-anchor", "end")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em")
+      .attr("transform", "rotate(-65)");
+
+    yGroup.transition(t)
+        .call(yAxis)
+      .selection()
+        .call(g => g.select(".domain").remove());*/
+  }
 }
 
-const createLineChart = (_data) => {
-	const data = _data.map(x => ({...x, "date": parseTime(x.year)}))
-	console.groupCollapsed("Line Chart Data");
-	console.table(data);
-	console.groupEnd();
+const createLineChart = (data, colors) => {
+  // Set the dimensions and margins of the graph
+  const width = 900, height = 400;
+  const margins = {top: 10, right: 100, bottom: 20, left: 20};
 
-  /* Set the dimensions and margins of the graph */
-	const width = 900, height = 400;
-	const margin = {top: 20, right: 20, bottom: 80, left: 40};
-  /* Create the SVG container */
-	const svg = d3
-		.select("#line")
-		.append("svg")
-		.attr("viewBox", [0, 0, width, height]);  
+  // Create the SVG container
+  const svg = d3.select("#line")
+    .append("svg")
+    .attr("viewBox", [0, 0, width, height]);
 
-  /* Define x-axis, y-axis, and color scales */
-  	const xScale = d3
-		.scaleTime()
-		.domain(d3.extent(data, d => d.date))
-		.range([margin.left, width - margin.right]);
-
-	const yScale = d3
-		.scaleLinear()
-		.domain([0, d3.max(data, d => d.value)])
-		.range([height - margin.bottom, margin.top])
-
-	const colorScale = d3
-		.scaleOrdinal()
-		.domain(data.map(d => d.country))
-		.range(d3.schemeTableau10);
-
-  /* Construct a line generator
-    Ref: https://observablehq.com/@d3/line-chart and https://github.com/d3/d3-shape */
-	const line = d3
-		.line()
-		.curve(d3.curveLinear)
-		.x(d => xScale(d.date))
-		.y(d => yScale(d.value))
-
-	console.groupCollapsed("line");
-	console.log(line);
-	console.groupEnd();
-
-  /* Group the data for each country
-    Ref: https://observablehq.com/@d3/d3-group */
-	const dataGroup = d3.group(data, d => d.country);
-	console.groupCollapsed("dataGroup");
-	console.table(dataGroup);
-	console.groupEnd();
-
-	// debugger
-
-  /* Create line paths for each country */
-  const path = svg.selectAll("path")
-	.data(dataGroup)
-	.join("path")
-		.attr("d", ([i, d]) => line(d))
-		.style("stroke", 'lightgrey')
-		// .attr("stroke", ([i, d]) => colorScale(i))
-		.style("stroke-width", 2)
-		.style("fill", "transparent")
-		.attr("stroke-linejoin", "round")
-		.attr("stroke-linecap", "round")
-		.append("title")
-		.text(d => `${d[0]}`);
-
-  /* Add the tooltip when hover on the line */
+  // Define x-axis, y-axis, and color scales
+  const xScale = d3.scaleTime()
+    .domain(d3.extent(data, d => d.date))
+    .range([margins.left, width - margins.right]);
   
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(data, d => d.value)])
+    .range([height - margins.bottom, margins.top]);
 
-  /* Create the x and y axes and append them to the chart */
+  // Construct a line generator
+  const line = d3.line()
+    .curve(d3.curveLinear)
+    .x(d => xScale(d.date))
+    .y(d => yScale(d.value));
 
+  // Group the data for each country
+// TODO: Change to group the data by geo
+  const group = d3.group(data, d => d.country);
 
-  /* Add text labels on the right of the chart */
-  
+  // Draw a line path for each country
+  const path = svg.selectAll('path')
+      .data(group)
+      .join('path')
+// TODO: Add the geo as the class
+        .attr('d', ([i, d]) => line(d))
+// TODO: Change the color to lightgrey
+        .style('stroke', ([i, d])=> colors(i))
+        .style('stroke-width', 2)
+        .style('fill', 'transparent')
+// TODO: Add the opacity to each line
+
+  // Add the tooltip when hover on the line
+  path.append('title').text(([i, d]) => d[0].country);
+
+  // Create the x and y axes and append them to the chart
+  const xAxis = d3.axisBottom(xScale);
+
+  svg.append("g")
+    .attr("transform", `translate(0,${height - margins.bottom})`)
+    .call(xAxis);
+
+  const yAxis = d3.axisLeft(yScale);
+
+  svg.append("g")
+    .attr("transform", `translate(${margins.left},0)`)
+    .call(yAxis)
+    .call(g => g.select(".domain").remove());
+
+  // Add text labels on the right of the chart
+  const data2020 = data.filter(data => data.year == 2020);
+  const labels = svg.selectAll('text.label')
+    .data(data2020)
+    .join('text')
+// TODO: Add geo as the class to the text label
+      .attr('x', width - margins.right + 5)
+      .attr('y', d => yScale(d.value))
+      .attr('dy', '0.35em')
+      .style('font-family', 'sans-serif')
+      .style('font-size', 12)
+      .style('fill', d => colors(d.country))
+    .text(d => d.country);
+
+// TODO: Hide text labels when unselected
+
 }
