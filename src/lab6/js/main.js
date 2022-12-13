@@ -1,38 +1,6 @@
 // Set the time format
 const parseTime = d3.timeParse("%Y");
 
-(async () => {
-
-  const DATA_URL = "/src/lab6/data/data.csv";
-
-  // Load the dataset and formatting variables
-  const data = await d3.csv(DATA_URL, d => {
-    return {
-      geo: d.geo,
-      country: d.country,
-      year: +d.year,
-      value: +d.value,
-      date: parseTime(d.year)
-    }
-  });
-
-  // We need to make sure that the data are sorted correctly by country and then by year
-  data = data.sort((a, b) => d3.ascending(a.country, b.country) || d3.ascending(a.year, b.year));
-
-  // Define the color scale for countries
-  const countries = Array.from(new Set(data.map(d => d.country))).sort();
-  const colors = d3.scaleOrdinal()
-    .domain(countries)
-    .range(d3.quantize(d3.interpolateRainbow, countries.length));
-
-  // Plot the bar chart
-  createBarChart(data, colors);
-
-  // Plot the line chart
-  createLineChart(data, colors);
-
-})();
-
 // // Load the dataset and formatting variables
 // d3.csv("/src/lab6/data/data.csv", d => {
 //   return {
@@ -325,3 +293,35 @@ const createLineChart = (data, colors) => {
 // TODO: Hide text labels when unselected
   labels.style('visibility','hidden');
 }
+
+(async () => {
+
+  const DATA_URL = "/src/lab6/data/data.csv";
+
+  // Load the dataset and formatting variables
+  const data = await d3.csv(DATA_URL, d => {
+    return {
+      geo: d.geo,
+      country: d.country,
+      year: +d.year,
+      value: +d.value,
+      date: parseTime(d.year)
+    }
+  });
+
+  // We need to make sure that the data are sorted correctly by country and then by year
+  data = data.sort((a, b) => d3.ascending(a.country, b.country) || d3.ascending(a.year, b.year));
+
+  // Define the color scale for countries
+  const countries = Array.from(new Set(data.map(d => d.country))).sort();
+  const colors = d3.scaleOrdinal()
+    .domain(countries)
+    .range(d3.quantize(d3.interpolateRainbow, countries.length));
+
+  // Plot the bar chart
+  createBarChart(data, colors);
+
+  // Plot the line chart
+  createLineChart(data, colors);
+
+})()
