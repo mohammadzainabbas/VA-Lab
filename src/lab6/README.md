@@ -23,7 +23,7 @@ In this lab, we will focus on learning how to generate some basic charts in `D3.
 
 ### 2. Data
 
-You can see the data that we used in this lab [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab5/data/data.csv)
+You can see the data that we used in this lab [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab6/data/data.csv)
 
 #
 
@@ -35,7 +35,7 @@ If you want to follow along, make sure to clone and `cd` to this lab's directory
 
 ```bash
 git clone https://github.com/mohammadzainabbas/VA-Lab.git
-cd VA-Lab/src/lab5
+cd VA-Lab/src/lab6
 ```
 
 <a id="create-new-env" />
