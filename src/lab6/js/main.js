@@ -76,7 +76,8 @@ const createBarChart = (data, colors) => {
     
 
     // 2.5 Make the text label visible
-    
+    d3.select(`text.${geo}`).attr('visibility', 'visible');
+
   });
 
   bar.on("mouseout", function() {
