@@ -94,6 +94,14 @@ Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab
 
 Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab5) 
 
+<a id="lab-6" />
+
+#### 3.6. Lab 06 - Events, Interactivity, and Animation with d3.js
+
+[D3.js](https://d3js.org/) is a producing dynamic, interactive data visualizations in web browsers. It makes use of Scalable Vector Graphics, HTML5, and Cascading Style Sheets standards.
+
+Please checkout lab's details [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab6) 
+
 #
 
 <a id="setup" />
