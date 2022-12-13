@@ -87,7 +87,9 @@ const createBarChart = (data, colors) => {
     d3.select(this).attr('stroke', 'none');
 
     // 2.8 Change the line color to lightgrey
-    
+    d3.select(`path.${geo}`)
+    .attr('stroke', 'lightgrey')
+    .attr('opacity', 0.5)
 
     // 2.9 Make the text label invisible again
     
