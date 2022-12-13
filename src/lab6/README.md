@@ -1,4 +1,4 @@
-## Lab 05 - Basic charts with d3.js (continue) 👨🏻‍💻
+## Lab 06 - Events, Interactivity, and Animation with d3.js 👨🏻‍💻
 
 ### Table of contents
 
