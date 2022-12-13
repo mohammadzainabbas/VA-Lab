@@ -6,7 +6,7 @@ const parseTime = d3.timeParse("%Y");
   const DATA_URL = "/src/lab6/data/data.csv";
 
   // Load the dataset and formatting variables
-  const data = await d3.csv("/src/lab6/data/data.csv", d => {
+  const data = await d3.csv(DATA_URL, d => {
     return {
       geo: d.geo,
       country: d.country,
