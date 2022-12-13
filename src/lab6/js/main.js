@@ -81,7 +81,7 @@ const createBarChart = (data, colors) => {
 
   bar.on("mouseout", function() {
     // 2.6 Get the geo of the selected bar
-    
+    const geo = d3.select(this).attr('class');
 
     // 2.7 Change the highlight stroke in the bar back to normal
     
