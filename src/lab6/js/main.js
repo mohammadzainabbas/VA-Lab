@@ -84,7 +84,7 @@ const createBarChart = (data, colors) => {
     const geo = d3.select(this).attr('class');
 
     // 2.7 Change the highlight stroke in the bar back to normal
-    
+    d3.select(this).attr('stroke', 'none');
 
     // 2.8 Change the line color to lightgrey
     
