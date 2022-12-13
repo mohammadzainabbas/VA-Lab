@@ -67,13 +67,15 @@ const createBarChart = (data, colors) => {
 // TODO: 2.1 Add event listener to each bar
   bar.on("mouseover", function() {
     // 2.2 Get the geo and color of the selected bar
-
+    const geo = d3.select(this).attr('class');
 
     // 2.3 Highlight the bar with black stroke
-    
+    d3.select(this).attr('stroke', 'black');
 
     // 2.4 Highlight the line with the color
-    
+    d3.select(`path.${geo}`)
+    .attr('stroke', colors(d3.select(this).data()[0].country))
+    .attr('opacity', 1);
 
     // 2.5 Make the text label visible
     d3.select(`text.${geo}`).attr('visibility', 'visible');
