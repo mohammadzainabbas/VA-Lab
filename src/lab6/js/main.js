@@ -2,7 +2,7 @@
 const parseTime = d3.timeParse("%Y");
 
 // Load the dataset and formatting variables
-d3.csv("../data/data.csv", d => {
+d3.csv("/data/data.csv", d => {
   return {
     geo: d.geo,
     country: d.country,
