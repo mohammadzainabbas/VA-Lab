@@ -324,4 +324,4 @@ const createLineChart = (data, colors) => {
   // Plot the line chart
   createLineChart(data, colors);
 
-})()
+})();
