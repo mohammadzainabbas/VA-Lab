@@ -92,7 +92,7 @@ const createBarChart = (data, colors) => {
     .attr('opacity', 0.5)
 
     // 2.9 Make the text label invisible again
-    
+    d3.select(`text.${geo}`).attr('visibility', 'hidden');
   });
 
   // Add the tooltip when hover on the bar
