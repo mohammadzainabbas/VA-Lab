@@ -4,9 +4,6 @@
 
 - [Introduction](#introduction)
 - [Data](#data)
-- [Setup](#setup)
-  * [Create new enviornment](#create-new-env)
-  * [Setup `pre-commit` hooks](#setup-pre-commit)
 
 #
 
@@ -26,37 +23,3 @@ In this lab, we will focus on learning how to generate some basic charts in `D3.
 You can see the data that we used in this lab [here](https://github.com/mohammadzainabbas/VA-Lab/tree/main/src/lab6/data/data.csv)
 
 #
-
-<a id="setup" />
-
-### 3. Setup
-
-If you want to follow along, make sure to clone and `cd` to this lab's directory:
-
-```bash
-git clone https://github.com/mohammadzainabbas/VA-Lab.git
-cd VA-Lab/src/lab6
-```
-
-<a id="create-new-env" />
-
-#### 3.1. Create new enviornment
-
-Before starting, you may have to create new enviornment for the lab. Kindly, checkout the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_ENV.md) for creating an new environment.
-
-#
-
-Once, you have activated your new enviornment, we will install all the dependencies of this project:
-
-```bash
-pip install -r requirements.txt
-```
-
-<a id="setup-pre-commit" />
-
-#### 3.2. Setup `pre-commit` hooks
-
-In order to setup `pre-commit` hooks, please refer to the [documentation](https://github.com/mohammadzainabbas/VA-Lab/blob/main/docs/SETUP_PRE-COMMIT_HOOKS.md).
-
-#
-
