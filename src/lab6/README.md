@@ -4,9 +4,6 @@
 
 - [Introduction](#introduction)
 - [Data](#data)
-- [Setup](#setup)
-  * [Create new enviornment](#create-new-env)
-  * [Setup `pre-commit` hooks](#setup-pre-commit)
 
 #
 
