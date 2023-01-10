@@ -83,7 +83,13 @@ const plotNodeLink = function(nodes, links) {
 
   // 5. Update the position of nodes and edges during the simulation
   function ticked() {
-    
+    link.attr("x1", d => d.source.x)
+	.attr("y1", d => d.source.y)
+	.attr("x2", d => d.target.x)
+	.attr("y2", d => d.target.y);
+
+	node.attr("cx", d => d.x)
+	.attr("cy", d => d.y);
   }
 
   // 6. Adjust the position when users drag a node
