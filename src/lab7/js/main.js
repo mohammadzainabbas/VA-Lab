@@ -56,7 +56,7 @@ const plotNodeLink = function(nodes, links) {
 	console.log(simulation);
 	console.groupEnd();
   // 2. Add links to the SVG canvas
-  
+  const link = 
   
 
   // 3. Add nodes to the SVG canvas
