@@ -56,7 +56,14 @@ const plotNodeLink = function(nodes, links) {
 	console.log(simulation);
 	console.groupEnd();
   // 2. Add links to the SVG canvas
-  const link = 
+  const link = svg.append("g")
+  .selectAll("line")
+  .data(links)
+  .join("line")
+	.attr("stroke", "#999")
+	.attr("stroke-opacity", 0.5)
+	.attr("stroke-width", d => d.strength * 5)
+	.attr("stroke-linecap", "round")
   
 
   // 3. Add nodes to the SVG canvas
