@@ -77,9 +77,9 @@ const plotNodeLink = function(nodes, links) {
 	.attr("stroke-opacity", 1)
 
   // 4. Add a tooltip for each node
-  /*node.append("title").text(d => `${d.HS4}\n` + 
+  node.append("title").text(d => `${d.HS4}\n` + 
     `${d3.format("$,")(d['Trade Value'])} | ` +
-    `RCA: ${d3.format(".2f")(d['Trade Value RCA'])}`);*/
+    `RCA: ${d3.format(".2f")(d['Trade Value RCA'])}`);
 
   // 5. Update the position of nodes and edges during the simulation
   function ticked() {
