@@ -4,7 +4,7 @@ const color = d3.scaleOrdinal([
   "#44AAAA", "#77CCCC", "#117744", "#44AA77", "#88CCAA", "#777711", "#AAAA44", 
   "#DDDD77", "#774411", "#AA7744", "#DDAA77", "#771122", "#AA4455", "#DD7788"])
 
-d3.json("../data/data.json").then(graph => {
+d3.json("/src/lab7/data/data.json").then(graph => {
   const {nodes, links} = graph;
 
   // I have already implemented the color legend.
