@@ -51,7 +51,7 @@ const plotNodeLink = function(nodes, links) {
     .force("node", d3.forceManyBody().strength(-20))
     .force("link", d3.forceLink(links).id(d => d.id))
 	.force("center", d3.forceCenter())
-	.on("click", ticked);
+	.on("tick", ticked);
 
 	console.groupCollapsed("Simulation");
 	console.log(simulation);
