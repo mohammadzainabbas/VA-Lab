@@ -65,8 +65,11 @@ const plotNodeLink = function(nodes, links) {
 	.attr("stroke-width", d => d.strength * 5)
 	.attr("stroke-linecap", "round")
   
-
   // 3. Add nodes to the SVG canvas
+  const node = svg.append("g")
+  .selectAll("circle")
+  .data(nodes)
+  .join("circle")
   
 
   // 4. Add a tooltip for each node
