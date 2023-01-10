@@ -70,7 +70,11 @@ const plotNodeLink = function(nodes, links) {
   .selectAll("circle")
   .data(nodes)
   .join("circle")
-  
+	.attr("r", d => 2 + d['Trade Value RCA'])
+	.attr("fill", d => color(+d['Section ID'] - 1))
+	.attr("stroke", "#fff")
+	.attr("stroke-width", 1.5)
+	.attr("stroke-opacity", 1)
 
   // 4. Add a tooltip for each node
   /*node.append("title").text(d => `${d.HS4}\n` + 
