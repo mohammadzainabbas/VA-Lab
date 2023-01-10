@@ -52,7 +52,9 @@ const plotNodeLink = function(nodes, links) {
     .force("link", d3.forceLink(links).id(d => d.id))
 	.force("center", d3.forceCenter())
 
-
+	console.groupCollapsed("Simulation");
+	console.log(simulation);
+	console.groupEnd();
   // 2. Add links to the SVG canvas
   
   
