@@ -48,7 +48,9 @@ const plotNodeLink = function(nodes, links) {
   // 1. Construct the forces and simulate for node positions
   // Ref: https://www.d3indepth.com/force-layout/ and https://github.com/d3/d3-force
   const simulation = d3.forceSimulation(nodes)
-    .force("link", d3.forceMany(links).id(d => d.id))
+    .force("link", d3.forceMany(links).strength(0.1))
+	.force("charge", d3.forceMany().strength(-100))
+	.force("center", d3.forceMany().strength(0.1))
 
   // 2. Add links to the SVG canvas
   
