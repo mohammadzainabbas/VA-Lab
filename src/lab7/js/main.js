@@ -51,6 +51,7 @@ const plotNodeLink = function(nodes, links) {
     .force("link", d3.forceMany(links).strength(0.1))
 	.force("charge", d3.forceMany().strength(-100))
 	.force("center", d3.forceMany().strength(0.1))
+	.force("x", d3.forceMany().strength(0.1))
 
   // 2. Add links to the SVG canvas
   
